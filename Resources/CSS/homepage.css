@@ -1,4 +1,38 @@
-.wrapper{
-    min-height: 200vh;
-    background: black;
+@import url('https://fonts.googleapis.com/css2?family=Comfortaa:wght@400;700&display=swap');
+
+.wrapper {
+	min-height: 100vh;
+	background: #1d373f;
+}
+
+.Logo_Proper_Background,
+.Logo_Proper_Text {
+	position: absolute;
+	display: none;
+}
+
+.logo_heading {
+	color: #f0c368;
+	display: none;
+	position: absolute;
+	top: 40vh;
+	left: 140vw;
+	font-size: 6em;
+}
+
+.nav_links {
+	display: none;
+	/*   transform: scale(0); */
+	width: 16vw;
+	justify-content: center;
+	margin-left: 4vw;
+}
+
+.nav_links li {
+	margin: 1em;
+}
+
+.nav_links a {
+	color: #ffffff;
+	font-size: 1em;
 }
