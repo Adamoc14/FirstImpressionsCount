@@ -1,14 +1,18 @@
 @import url('https://fonts.googleapis.com/css2?family=Comfortaa:wght@400;700&display=swap');
+:root{
+	--fontSize : 2vw;
+}
 * {
 	margin: 0;
 	padding: 0;
 	font-family: Comfortaa;
 	font-weight: 500;
-	font-size: 1.1em;
+	font-size: 2vw;
 }
 
 li {
 	list-style: none;
+	text-align: center;
 }
 
 a {
@@ -47,26 +51,24 @@ input[type=range] {
 input[type=range]:focus {
 	outline: none;
 }
-input[type=range]::-webkit-slider-runnable-track {
-	width: 20vw;
-	height: 3.7px;
-	cursor: pointer;
-	box-shadow: 1.2px 1.2px 4px #000000, 0px 0px 1.2px #0d0d0d;
-	background: #ffffff;
-	border-radius: 25px;
-	border: 0.7px solid #ffffff;
-}
-input[type=range]::-webkit-slider-thumb {
-	box-shadow: 1px 1px 1px #000000, 0px 0px 1px #0d0d0d;
-	border: 1px solid #00aba9;
-	height: 36px;
-	width: 36px;
-	border-radius: 31px;
-	background: #00aba9;
-	cursor: pointer;
-	-webkit-appearance: none;
-	margin-top: -16.85px;
-}
-input[type=range]:focus::-webkit-slider-runnable-track {
-	background: #ffffff;
+
+@media ( max-width: 600px ) {
+	*{
+		font-size: 3vw;
+	}
+	:root{
+		--fontSize: 3vw;
+	}
+    input[type="text"], 
+    input[type="password"], 
+    input[type="email"] , 
+    input[type="tel"] ,
+    select,
+    textarea{
+        padding: .5em 4em .5em .4em;
+	}
+	textarea   {
+        padding-right: 3.9em;
+    }
+
 }
