@@ -1,5 +1,7 @@
 //Variable Declarations and Function Definitions 
 
+let viewBox = "", 
+    heading_Pos = 0
 MorphSVGPlugin.convertToPath("circle, ellipse");
 var logo = $(".Actual_Logo_Svg");
 
@@ -21,10 +23,16 @@ const tl = new TimelineMax({
 
 var shapes = Array.from($('.Logo_In_Shapes path'));
 
+const changeViewBox = media_query => {
+    media_query.matches ? viewBox = "-150 -180 2495 890" : viewBox = "-150 -350 3574 880"
+    media_query.matches ? heading_Pos = -561 : heading_Pos = -1540;
+}
 
 function moveLogo() {
+    var x = window.matchMedia("(max-width: 600px)")
+    changeViewBox(x)
     gsap.to(logo, {
-        attr: { viewBox: "-150 -350 3574 880" },
+        attr: { viewBox: viewBox},
         duration: 3
     })
     fadeIn()
@@ -40,13 +48,13 @@ function fadeIn() {
         x: 1340,
         y: 20
     },
-        {
-            display: "block",
-            x: -1540,
-            y: 40,
-            // scale:1,
-            duration: 3
-        })
+    {
+        display: "block",
+        x: heading_Pos,
+        y: 40,
+        // scale:1,
+        duration: 3
+    })
 }
 
 

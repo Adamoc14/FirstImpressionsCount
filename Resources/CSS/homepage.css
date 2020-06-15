@@ -204,6 +204,10 @@ footer {
 }
 
 @media (max-width: 600px) {
+	.logo_heading h1 {
+		font-size: 20vw;
+	}
+	
 	#projects_section_main_container,
 	#about_section_main_container,
 	.contact_section_content {
