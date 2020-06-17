@@ -213,8 +213,8 @@ footer {
 
 	.mobile_nav_sticky {
 		position: fixed;
-		top: 80vh;
-		right: 10vw;
+		top: 70vh;
+		right: 8vw;
 		padding: 2em 2em;
 		background: #fff;
 		border-radius: 50%;
