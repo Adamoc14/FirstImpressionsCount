@@ -28,7 +28,7 @@ var shapes = Array.from($('.Logo_In_Shapes path'));
 
 const changeViewBox = media_query => {
     media_query.matches ? viewBox = "-150 -180 2495 890" : viewBox = "-150 -350 3574 880"
-    media_query.matches ? heading_Pos = [-511 , 15] : heading_Pos = [-1540, 40];
+    media_query.matches ? heading_Pos = [-511 , -15] : heading_Pos = [-1540, 40];
     console.log(heading_Pos);
     media_query.matches ? displayState = "none" : displayState = "block"
 }
