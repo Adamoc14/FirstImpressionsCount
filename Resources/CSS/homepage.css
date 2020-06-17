@@ -228,7 +228,7 @@ footer {
 	.options.open {
 		position: fixed;
 		top: -30vh;
-		right: 2vw;
+		right: 1vw;
 		display: flex;
 		flex-direction: column;
 		text-align: center;
