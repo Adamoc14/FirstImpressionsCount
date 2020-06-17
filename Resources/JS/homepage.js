@@ -5,6 +5,8 @@ let viewBox = "",
 MorphSVGPlugin.convertToPath("circle, ellipse");
 var logo = $(".Actual_Logo_Svg");
 
+window.matchMedia("(max-width: 600px)").matches ? logo.attr('viewBox' , '-400 -900 1274 1680') : logo.attr('viewBox' , '-680 -380 2074 1080')
+
 var firstAnimation = gsap.to('.shapes', {
     duration: 2,
     morphSVG: ".Logo_Proper_Background"
