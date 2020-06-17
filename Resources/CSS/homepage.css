@@ -24,7 +24,7 @@
 .logo_heading h1 {
 	font-size: 13vw;
 }
-.mobile_nav_sticky{
+.mobile_nav_sticky {
 	display: none;
 }
 
@@ -221,39 +221,56 @@ footer {
 		border: 2px solid #fff;
 	}
 
-	.options{
+	.options {
 		display: none;
 	}
 
-	.bar1 ,.bar2 , .bar3{
+	.options.open {
+		position: fixed;
+		top: -30vh;
+		right: 3vw;
+		display: flex;
+		flex-direction: column;
+		text-align: center;
+	}
+
+	.options a {
+		padding: 3em 2em;
+		margin-top: 1em;
+		background: #f0c368;
+		border-radius: 50%;
+		border: 2px solid #fff;
+	}
+
+	.bar1,
+	.bar2,
+	.bar3 {
 		width: 40px;
 		height: 5px;
 		background: #1d373f;
 		margin: 6px 0;
 		transition: .4s;
-		
 	}
 	.bar2 {
 		width: 20px;
 	}
-	
+
 	.change .bar1 {
-		transform: rotate(-45deg) translate(71.5px,115.5px);
+		transform: rotate(-45deg) translate(71.5px, 115.5px);
 	}
-	
-	.change .bar2{
+
+	.change .bar2 {
 		opacity: 0;
 	}
-	
-	.change .bar3{
-		transform: rotate(45deg) translate(101px,-87px);
-	}
-	
 
-	.nav_links{
+	.change .bar3 {
+		transform: rotate(45deg) translate(101px, -87px);
+	}
+
+	.nav_links {
 		display: none;
 	}
-	
+
 	#projects_section_main_container,
 	#about_section_main_container,
 	.contact_section_content {
@@ -273,7 +290,7 @@ footer {
 	}
 
 	.projects_button,
-	.contact_button ,
+	.contact_button,
 	.about_button {
 		padding: 1em 2em;
 		margin-top: 2em;

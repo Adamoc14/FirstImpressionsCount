@@ -3,6 +3,9 @@
 let viewBox = "", 
     heading_Pos = [0,0],
     displayState = ""
+    hamburger_display_button = Array.from($('.mobile_nav_sticky'))[0]
+    opened_nav_buttons= document.querySelector('.options')
+
 MorphSVGPlugin.convertToPath("circle, ellipse");
 var logo = $(".Actual_Logo_Svg");
 
@@ -29,9 +32,9 @@ var shapes = Array.from($('.Logo_In_Shapes path'));
 const changeViewBox = media_query => {
     media_query.matches ? viewBox = "-150 -180 2495 890" : viewBox = "-150 -350 3574 880"
     media_query.matches ? heading_Pos = [-511 , -15] : heading_Pos = [-1540, 40];
-    console.log(heading_Pos);
     media_query.matches ? displayState = "none" : displayState = "block"
 }
+
 
 function moveLogo() {
     var x = window.matchMedia("(max-width: 600px)")
@@ -79,4 +82,8 @@ tl.staggerTo(shapes, 1, {
     fill: '#F0C368'
 }, 0.05)
 
-tl.add([firstAnimation, secondAnimation]);
+tl.add([firstAnimation, secondAnimation])
+
+hamburger_display_button.onclick = () => {
+    opened_nav_buttons.classList.toggle('open')
+};
