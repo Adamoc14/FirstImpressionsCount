@@ -1,7 +1,8 @@
 //Variable Declarations and Function Definitions 
 
 let viewBox = "", 
-    heading_Pos = 0
+    heading_Pos = 0,
+    displayState = ""
 MorphSVGPlugin.convertToPath("circle, ellipse");
 var logo = $(".Actual_Logo_Svg");
 
@@ -28,6 +29,7 @@ var shapes = Array.from($('.Logo_In_Shapes path'));
 const changeViewBox = media_query => {
     media_query.matches ? viewBox = "-150 -180 2495 890" : viewBox = "-150 -350 3574 880"
     media_query.matches ? heading_Pos = -511 : heading_Pos = -1540;
+    media_query.matches ? displayState = "none" : displayState = "block"
 }
 
 function moveLogo() {
@@ -42,7 +44,7 @@ function moveLogo() {
 
 function fadeIn() {
     gsap.to('.nav_links', {
-        display: "block",
+        display: displayState,
         scale: 1,
         duration: 3
     })
