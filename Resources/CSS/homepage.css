@@ -255,7 +255,10 @@ footer {
 		font-weight: 700;
 		background: #f0c368;
 		border: 1px solid #1d373f;
+		transition: all 1.5s ease;
 	}
+
+
 
 	.bar1,
 	.bar2,
