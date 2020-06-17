@@ -57,6 +57,11 @@ function fadeIn() {
         // scale:1,
         duration: 3
     })
+    gsap.to('.mobile_nav_sticky', {
+        display: "block",
+        scale: 1,
+        duration: 3
+    })
 }
 
 
