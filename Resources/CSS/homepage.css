@@ -252,8 +252,9 @@ footer {
 		text-align: center;
 		padding: 1.5em 1.5em;
 		margin-top: 1em;
+		font-weight: 700;
 		background: #f0c368;
-		border: 2px solid #1d373f;
+		border: 1px solid #1d373f;
 	}
 
 	.bar1,
