@@ -218,7 +218,7 @@ footer {
 		padding: 2em 2em;
 		background: #f0c368;
 		border-radius: 50%;
-		border: 2px solid #fff;
+		border: 2px solid #1d373f;
 	}
 
 	.options {
@@ -234,12 +234,26 @@ footer {
 		text-align: center;
 	}
 
-	.options a {
-		padding: 3em 2em;
+	/* .options a {
+		height: 80px;
+		width: 80px;
+		border-radius: 50%;
+		line-height: 80px;
+		text-align: center;
+		padding: 2.1em 2em;
 		margin-top: 1em;
 		background: #f0c368;
-		border-radius: 50%;
 		border: 2px solid #fff;
+	} */
+
+	.options a {
+		border-radius: 50%;
+		line-height: 3.5em;
+		text-align: center;
+		padding: 1.5em 1.5em;
+		margin-top: 1em;
+		background: #f0c368;
+		border: 2px solid #1d373f;
 	}
 
 	.bar1,
