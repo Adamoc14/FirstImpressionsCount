@@ -216,9 +216,9 @@ footer {
 		top: 70vh;
 		right: 3vw;
 		padding: 2em 2em;
-		background: #fff;
+		background: #1d373f;
 		border-radius: 50%;
-		border: 1px solid #eee;
+		border: 2px solid #fff;
 	}
 
 	.options{
