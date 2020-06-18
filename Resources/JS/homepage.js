@@ -84,20 +84,28 @@ const fadeInHeadingAndLinks = () => {
 
 const pageTransition = () => {
     var tl = gsap.timeline();
+    tl.set('.loading_container img' , {
+        scale: 0.7
+    })
     tl.to('.loading_container', {
         duration: 1.2,
         width: "100%",
         left: "0%",
-        ease: "Expo.InOut",
+        ease: "circ.out",
     })
-    .to('.loading_container', {
-        background: "#f0c368"
-    })
+    .to('.loading_container img' , {
+        scale : 1,
+        duration: 1
+    } , "-=1.2")
+    .to('.loading_container img' , {
+        scale : 0.7,
+        duration: 1
+    }, "-=.3")
     .to('.loading_container', {
         duration: 1.2,
         width: "0%",
         right: "0%",
-        ease: "Expo.InOut",
+        ease: "circ.out",
     })
 }
 
