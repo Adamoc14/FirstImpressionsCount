@@ -91,7 +91,7 @@ const pageTransition = () => {
         ease: "Expo.InOut",
     })
     .to('.loading_container', {
-        background: "#1d373f"
+        background: "#f0c368"
     })
     .to('.loading_container', {
         duration: 1.2,
