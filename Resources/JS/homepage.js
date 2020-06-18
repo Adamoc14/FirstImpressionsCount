@@ -46,7 +46,6 @@ const logo_tl_func = () => {
         morphSVG: ".Logo_Proper_Text"
     });
     logo_tl.add([firstAnimation, secondAnimation])
-    console.log('Well you should have animated rn')
 }
 
 const changeViewBox = media_query => {
@@ -92,7 +91,7 @@ const pageTransition = () => {
         ease: "Expo.InOut",
     })
     .to('.loading_container', {
-        background: "#f0c368"
+        background: "#1d373f"
     })
     .to('.loading_container', {
         duration: 1.2,
