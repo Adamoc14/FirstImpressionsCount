@@ -131,7 +131,7 @@ barba.init({
 });
 
 barba.hooks.afterEnter(() => {
-    let logo_tl = logo_tl_func();
+    const logo_tl = logo_tl_func();
     logo_tl.pause(0);
     openNav;
 });
