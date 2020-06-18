@@ -10,119 +10,129 @@
     <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.2.6/gsap.min.js"></script>
     <script src="Resources/JS/MorphSVGPlugin.min.js"></script>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+    <script src="https://unpkg.com/@barba/core"></script>
     <script defer src="Resources/JS/homepage.js"></script>
     <title>Document</title>
 </head>
 
-<body>
-    <div class="wrapper">
-        <div class="svg_container">
-            <svg viewBox="-680 -380 2074 1080" fill="none" xmlns="http://www.w3.org/2000/svg" class="Actual_Logo_Svg">
-                <g class="Logo_In_Shapes">
-                    <path class="Green_Corner_Piece shapes" d="M85.5 109.5v46H4V0h168.5v83h-87v26.5z" fill="#50975E" />
-                    <path class="Purple_Top_Piece shapes" d="M193 0h132v83H193V0z" fill="#C6A8F7" />
-                    <path class="Brown_Top_Piece shapes" d="M336 0h132v83H336V0z" fill="#A78759" />
-                    <path class="Blue_Right_Side_Piece shapes"
-                        d="M478.691 274.685L479.607 0l94.31.315L573 275l-94.309-.315z" fill="#4787B3" />
-                    <path class="Pink_Bottom_Piece shapes" d="M392 297h182v83H392v-83z" fill="#F3C0D6" />
-                    <ellipse class="Cadetblue_Bottom_Circle" cx="325" cy="330" rx="52" ry="50" fill="#6CB8C7" />
-                    <path class="Orange_Bottom_Triangle" d="M257.56 286v93H111.5l146.06-93z" fill="#F09538" />
-                    <ellipse class="Salmon_Bottom_Oval" cx="143.233" cy="312.25" rx="23.265" ry="47.787"
-                        transform="rotate(44.972 143.233 312.25)" fill="#F89685" />
-                    <path class="Yellow_Left_Side_Piece shapes" d="M.985 378.71L1.678 171l87.015.29L88 379l-87.015-.29z"
-                        fill="#F0C368" />
-                    <path class="Light_Green_Top_SemiCircle shapes"
-                        d="M455 164.5c0-14.985-7.586-29.356-21.088-39.952C420.409 113.953 402.096 108 383 108s-37.409 5.953-50.912 16.548C318.586 135.144 311 149.515 311 164.5h144z"
-                        fill="#69D681" />
-                    <path class="Light_Green_Bottom_SemiCircle shapes"
-                        d="M310.621 191.08c.165 14.984 7.908 29.27 21.527 39.717 13.618 10.447 31.996 16.198 51.09 15.988 19.095-.21 37.341-6.364 50.727-17.107 13.385-10.744 20.812-25.198 20.648-40.181l-71.996.791-71.996.792z"
-                        fill="#69D681" />
-                    <path class="Red_Center_Square textShape" fill="#D64C44" d="M99 97h187v169H99z" />
-                </g>
-                <g class="Actual_Logo">
-                    <path class="Logo_Proper_Background" fill="#F0C368" d="M0 0h570v380H0z" />
-                    <path class="Logo_Proper_Text"
-                        d="M174.901 221.48c-4.928 0-9.344-1.152-13.248-3.456-3.904-2.368-7.008-5.568-9.312-9.6-2.24-4.032-3.36-8.576-3.36-13.632 0-5.12 1.152-9.696 3.456-13.728 2.368-4.032 5.568-7.2 9.6-9.504 4.032-2.368 8.576-3.552 13.632-3.552 5.056 0 9.568 1.184 13.536 3.552 4.032 2.304 7.2 5.472 9.504 9.504 2.368 4.032 3.584 8.608 3.648 13.728l-2.976 2.304c0 4.608-1.088 8.768-3.264 12.48-2.112 3.648-5.024 6.56-8.736 8.736-3.648 2.112-7.808 3.168-12.48 3.168zm.768-6.72c3.712 0 7.008-.864 9.888-2.592 2.944-1.728 5.248-4.096 6.912-7.104 1.728-3.072 2.592-6.496 2.592-10.272 0-3.84-.864-7.264-2.592-10.272-1.664-3.008-3.968-5.376-6.912-7.104-2.88-1.792-6.176-2.688-9.888-2.688-3.648 0-6.944.896-9.888 2.688-2.944 1.728-5.28 4.096-7.008 7.104-1.728 3.008-2.592 6.432-2.592 10.272 0 3.776.864 7.2 2.592 10.272 1.728 3.008 4.064 5.376 7.008 7.104 2.944 1.728 6.24 2.592 9.888 2.592zm22.944 6.24c-1.088 0-1.984-.32-2.688-.96-.704-.704-1.056-1.6-1.056-2.688v-16.416l1.824-7.584 5.664 1.44v22.56c0 1.088-.352 1.984-1.056 2.688-.704.64-1.6.96-2.688.96zm42.025.48c-5.056 0-9.6-1.152-13.632-3.456-4.032-2.368-7.232-5.568-9.6-9.6-2.304-4.032-3.456-8.608-3.456-13.728 0-5.056 1.12-9.6 3.36-13.632 2.304-4.032 5.408-7.2 9.312-9.504 3.904-2.368 8.32-3.552 13.248-3.552 4.288 0 8.16.928 11.616 2.784 3.456 1.792 6.24 4.192 8.352 7.2v-28.224c0-1.152.352-2.048 1.056-2.688.704-.704 1.6-1.056 2.688-1.056s1.984.352 2.688 1.056c.704.64 1.056 1.536 1.056 2.688v45.312c-.128 4.992-1.376 9.504-3.744 13.536-2.304 3.968-5.472 7.104-9.504 9.408-3.968 2.304-8.448 3.456-13.44 3.456zm0-6.72c3.712 0 7.008-.864 9.888-2.592a19.139 19.139 0 0 0 6.912-7.2c1.728-3.008 2.592-6.432 2.592-10.272 0-3.776-.864-7.168-2.592-10.176-1.664-3.072-3.968-5.472-6.912-7.2-2.88-1.728-6.176-2.592-9.888-2.592-3.648 0-6.944.864-9.888 2.592-2.944 1.728-5.28 4.128-7.008 7.2-1.728 3.008-2.592 6.4-2.592 10.176 0 3.84.864 7.264 2.592 10.272 1.728 3.008 4.064 5.408 7.008 7.2 2.944 1.728 6.24 2.592 9.888 2.592zm67.107 6.72c-4.928 0-9.344-1.152-13.248-3.456-3.904-2.368-7.008-5.568-9.312-9.6-2.24-4.032-3.36-8.576-3.36-13.632 0-5.12 1.152-9.696 3.456-13.728 2.368-4.032 5.568-7.2 9.6-9.504 4.032-2.368 8.576-3.552 13.632-3.552 5.056 0 9.568 1.184 13.536 3.552 4.032 2.304 7.2 5.472 9.504 9.504 2.368 4.032 3.584 8.608 3.648 13.728l-2.976 2.304c0 4.608-1.088 8.768-3.264 12.48-2.112 3.648-5.024 6.56-8.736 8.736-3.648 2.112-7.808 3.168-12.48 3.168zm.768-6.72c3.712 0 7.008-.864 9.888-2.592 2.944-1.728 5.248-4.096 6.912-7.104 1.728-3.072 2.592-6.496 2.592-10.272 0-3.84-.864-7.264-2.592-10.272-1.664-3.008-3.968-5.376-6.912-7.104-2.88-1.792-6.176-2.688-9.888-2.688-3.648 0-6.944.896-9.888 2.688-2.944 1.728-5.28 4.096-7.008 7.104-1.728 3.008-2.592 6.432-2.592 10.272 0 3.776.864 7.2 2.592 10.272 1.728 3.008 4.064 5.376 7.008 7.104 2.944 1.728 6.24 2.592 9.888 2.592zm22.944 6.24c-1.088 0-1.984-.32-2.688-.96-.704-.704-1.056-1.6-1.056-2.688v-16.416l1.824-7.584 5.664 1.44v22.56c0 1.088-.352 1.984-1.056 2.688-.704.64-1.6.96-2.688.96zm89.065 0c-1.088 0-1.984-.32-2.688-.96-.704-.704-1.056-1.6-1.056-2.688v-27.648c0-4.544-1.184-8.128-3.552-10.752-2.368-2.688-5.408-4.032-9.12-4.032-3.968 0-7.232 1.344-9.792 4.032-2.496 2.624-3.712 6.144-3.648 10.56h-6.624c.064-4.288.992-8.064 2.784-11.328 1.792-3.264 4.256-5.792 7.392-7.584 3.136-1.792 6.688-2.688 10.656-2.688 3.776 0 7.104.896 9.984 2.688 2.944 1.792 5.216 4.32 6.816 7.584 1.664 3.264 2.496 7.104 2.496 11.52v27.648c0 1.088-.352 1.984-1.056 2.688-.64.64-1.504.96-2.592.96zm-67.2 0c-1.152 0-2.08-.32-2.784-.96-.64-.704-.96-1.6-.96-2.688v-45.12c0-1.088.32-1.984.96-2.688.704-.704 1.632-1.056 2.784-1.056 1.088 0 1.952.352 2.592 1.056.704.704 1.056 1.6 1.056 2.688v45.12c0 1.088-.352 1.984-1.056 2.688-.64.64-1.504.96-2.592.96zm33.696 0c-1.088 0-1.984-.32-2.688-.96-.704-.704-1.056-1.6-1.056-2.688v-27.648c0-4.544-1.184-8.128-3.552-10.752-2.368-2.688-5.408-4.032-9.12-4.032-3.968 0-7.232 1.312-9.792 3.936-2.56 2.56-3.84 5.92-3.84 10.08h-5.28c.128-4.096 1.024-7.712 2.688-10.848 1.728-3.2 4.064-5.696 7.008-7.488 2.944-1.792 6.272-2.688 9.984-2.688 3.776 0 7.104.896 9.984 2.688 2.944 1.792 5.216 4.32 6.816 7.584 1.664 3.264 2.496 7.104 2.496 11.52v27.648c0 1.088-.352 1.984-1.056 2.688-.64.64-1.504.96-2.592.96z"
-                        fill="#1D373F" />
-                </g>
-            </svg>
-            <div class="logo_heading">
-                <h1>&#60;/adam></h1>
-            </div>
-            <div class="mobile_nav_sticky">
-                <div class="hamburger_menu">
-                    <div class="bar1"></div>
-                    <div class="bar2"></div>
-                    <div class="bar3"></div>
+<body data-barba="wrapper">
+    <div class="barba-container">
+        <div class="wrapper">
+            <div class="svg_container">
+                <svg viewBox="-680 -380 2074 1080" fill="none" xmlns="http://www.w3.org/2000/svg"
+                    class="Actual_Logo_Svg">
+                    <g class="Logo_In_Shapes">
+                        <path class="Green_Corner_Piece shapes" d="M85.5 109.5v46H4V0h168.5v83h-87v26.5z"
+                            fill="#50975E" />
+                        <path class="Purple_Top_Piece shapes" d="M193 0h132v83H193V0z" fill="#C6A8F7" />
+                        <path class="Brown_Top_Piece shapes" d="M336 0h132v83H336V0z" fill="#A78759" />
+                        <path class="Blue_Right_Side_Piece shapes"
+                            d="M478.691 274.685L479.607 0l94.31.315L573 275l-94.309-.315z" fill="#4787B3" />
+                        <path class="Pink_Bottom_Piece shapes" d="M392 297h182v83H392v-83z" fill="#F3C0D6" />
+                        <ellipse class="Cadetblue_Bottom_Circle" cx="325" cy="330" rx="52" ry="50" fill="#6CB8C7" />
+                        <path class="Orange_Bottom_Triangle" d="M257.56 286v93H111.5l146.06-93z" fill="#F09538" />
+                        <ellipse class="Salmon_Bottom_Oval" cx="143.233" cy="312.25" rx="23.265" ry="47.787"
+                            transform="rotate(44.972 143.233 312.25)" fill="#F89685" />
+                        <path class="Yellow_Left_Side_Piece shapes"
+                            d="M.985 378.71L1.678 171l87.015.29L88 379l-87.015-.29z" fill="#F0C368" />
+                        <path class="Light_Green_Top_SemiCircle shapes"
+                            d="M455 164.5c0-14.985-7.586-29.356-21.088-39.952C420.409 113.953 402.096 108 383 108s-37.409 5.953-50.912 16.548C318.586 135.144 311 149.515 311 164.5h144z"
+                            fill="#69D681" />
+                        <path class="Light_Green_Bottom_SemiCircle shapes"
+                            d="M310.621 191.08c.165 14.984 7.908 29.27 21.527 39.717 13.618 10.447 31.996 16.198 51.09 15.988 19.095-.21 37.341-6.364 50.727-17.107 13.385-10.744 20.812-25.198 20.648-40.181l-71.996.791-71.996.792z"
+                            fill="#69D681" />
+                        <path class="Red_Center_Square textShape" fill="#D64C44" d="M99 97h187v169H99z" />
+                    </g>
+                    <g class="Actual_Logo">
+                        <path class="Logo_Proper_Background" fill="#F0C368" d="M0 0h570v380H0z" />
+                        <path class="Logo_Proper_Text"
+                            d="M174.901 221.48c-4.928 0-9.344-1.152-13.248-3.456-3.904-2.368-7.008-5.568-9.312-9.6-2.24-4.032-3.36-8.576-3.36-13.632 0-5.12 1.152-9.696 3.456-13.728 2.368-4.032 5.568-7.2 9.6-9.504 4.032-2.368 8.576-3.552 13.632-3.552 5.056 0 9.568 1.184 13.536 3.552 4.032 2.304 7.2 5.472 9.504 9.504 2.368 4.032 3.584 8.608 3.648 13.728l-2.976 2.304c0 4.608-1.088 8.768-3.264 12.48-2.112 3.648-5.024 6.56-8.736 8.736-3.648 2.112-7.808 3.168-12.48 3.168zm.768-6.72c3.712 0 7.008-.864 9.888-2.592 2.944-1.728 5.248-4.096 6.912-7.104 1.728-3.072 2.592-6.496 2.592-10.272 0-3.84-.864-7.264-2.592-10.272-1.664-3.008-3.968-5.376-6.912-7.104-2.88-1.792-6.176-2.688-9.888-2.688-3.648 0-6.944.896-9.888 2.688-2.944 1.728-5.28 4.096-7.008 7.104-1.728 3.008-2.592 6.432-2.592 10.272 0 3.776.864 7.2 2.592 10.272 1.728 3.008 4.064 5.376 7.008 7.104 2.944 1.728 6.24 2.592 9.888 2.592zm22.944 6.24c-1.088 0-1.984-.32-2.688-.96-.704-.704-1.056-1.6-1.056-2.688v-16.416l1.824-7.584 5.664 1.44v22.56c0 1.088-.352 1.984-1.056 2.688-.704.64-1.6.96-2.688.96zm42.025.48c-5.056 0-9.6-1.152-13.632-3.456-4.032-2.368-7.232-5.568-9.6-9.6-2.304-4.032-3.456-8.608-3.456-13.728 0-5.056 1.12-9.6 3.36-13.632 2.304-4.032 5.408-7.2 9.312-9.504 3.904-2.368 8.32-3.552 13.248-3.552 4.288 0 8.16.928 11.616 2.784 3.456 1.792 6.24 4.192 8.352 7.2v-28.224c0-1.152.352-2.048 1.056-2.688.704-.704 1.6-1.056 2.688-1.056s1.984.352 2.688 1.056c.704.64 1.056 1.536 1.056 2.688v45.312c-.128 4.992-1.376 9.504-3.744 13.536-2.304 3.968-5.472 7.104-9.504 9.408-3.968 2.304-8.448 3.456-13.44 3.456zm0-6.72c3.712 0 7.008-.864 9.888-2.592a19.139 19.139 0 0 0 6.912-7.2c1.728-3.008 2.592-6.432 2.592-10.272 0-3.776-.864-7.168-2.592-10.176-1.664-3.072-3.968-5.472-6.912-7.2-2.88-1.728-6.176-2.592-9.888-2.592-3.648 0-6.944.864-9.888 2.592-2.944 1.728-5.28 4.128-7.008 7.2-1.728 3.008-2.592 6.4-2.592 10.176 0 3.84.864 7.264 2.592 10.272 1.728 3.008 4.064 5.408 7.008 7.2 2.944 1.728 6.24 2.592 9.888 2.592zm67.107 6.72c-4.928 0-9.344-1.152-13.248-3.456-3.904-2.368-7.008-5.568-9.312-9.6-2.24-4.032-3.36-8.576-3.36-13.632 0-5.12 1.152-9.696 3.456-13.728 2.368-4.032 5.568-7.2 9.6-9.504 4.032-2.368 8.576-3.552 13.632-3.552 5.056 0 9.568 1.184 13.536 3.552 4.032 2.304 7.2 5.472 9.504 9.504 2.368 4.032 3.584 8.608 3.648 13.728l-2.976 2.304c0 4.608-1.088 8.768-3.264 12.48-2.112 3.648-5.024 6.56-8.736 8.736-3.648 2.112-7.808 3.168-12.48 3.168zm.768-6.72c3.712 0 7.008-.864 9.888-2.592 2.944-1.728 5.248-4.096 6.912-7.104 1.728-3.072 2.592-6.496 2.592-10.272 0-3.84-.864-7.264-2.592-10.272-1.664-3.008-3.968-5.376-6.912-7.104-2.88-1.792-6.176-2.688-9.888-2.688-3.648 0-6.944.896-9.888 2.688-2.944 1.728-5.28 4.096-7.008 7.104-1.728 3.008-2.592 6.432-2.592 10.272 0 3.776.864 7.2 2.592 10.272 1.728 3.008 4.064 5.376 7.008 7.104 2.944 1.728 6.24 2.592 9.888 2.592zm22.944 6.24c-1.088 0-1.984-.32-2.688-.96-.704-.704-1.056-1.6-1.056-2.688v-16.416l1.824-7.584 5.664 1.44v22.56c0 1.088-.352 1.984-1.056 2.688-.704.64-1.6.96-2.688.96zm89.065 0c-1.088 0-1.984-.32-2.688-.96-.704-.704-1.056-1.6-1.056-2.688v-27.648c0-4.544-1.184-8.128-3.552-10.752-2.368-2.688-5.408-4.032-9.12-4.032-3.968 0-7.232 1.344-9.792 4.032-2.496 2.624-3.712 6.144-3.648 10.56h-6.624c.064-4.288.992-8.064 2.784-11.328 1.792-3.264 4.256-5.792 7.392-7.584 3.136-1.792 6.688-2.688 10.656-2.688 3.776 0 7.104.896 9.984 2.688 2.944 1.792 5.216 4.32 6.816 7.584 1.664 3.264 2.496 7.104 2.496 11.52v27.648c0 1.088-.352 1.984-1.056 2.688-.64.64-1.504.96-2.592.96zm-67.2 0c-1.152 0-2.08-.32-2.784-.96-.64-.704-.96-1.6-.96-2.688v-45.12c0-1.088.32-1.984.96-2.688.704-.704 1.632-1.056 2.784-1.056 1.088 0 1.952.352 2.592 1.056.704.704 1.056 1.6 1.056 2.688v45.12c0 1.088-.352 1.984-1.056 2.688-.64.64-1.504.96-2.592.96zm33.696 0c-1.088 0-1.984-.32-2.688-.96-.704-.704-1.056-1.6-1.056-2.688v-27.648c0-4.544-1.184-8.128-3.552-10.752-2.368-2.688-5.408-4.032-9.12-4.032-3.968 0-7.232 1.312-9.792 3.936-2.56 2.56-3.84 5.92-3.84 10.08h-5.28c.128-4.096 1.024-7.712 2.688-10.848 1.728-3.2 4.064-5.696 7.008-7.488 2.944-1.792 6.272-2.688 9.984-2.688 3.776 0 7.104.896 9.984 2.688 2.944 1.792 5.216 4.32 6.816 7.584 1.664 3.264 2.496 7.104 2.496 11.52v27.648c0 1.088-.352 1.984-1.056 2.688-.64.64-1.504.96-2.592.96z"
+                            fill="#1D373F" />
+                    </g>
+                </svg>
+                <div class="logo_heading">
+                    <h1>&#60;/adam></h1>
                 </div>
-                <div class="options">
-                    <a href="#projects_section_main_container">Projects</a>
-                    <a href="#about_section_main_container">About</a>
+                <div class="mobile_nav_sticky">
+                    <div class="hamburger_menu">
+                        <div class="bar1"></div>
+                        <div class="bar2"></div>
+                        <div class="bar3"></div>
+                    </div>
+                    <div class="options">
+                        <a href="#projects_section_main_container">Projects</a>
+                        <a href="#about_section_main_container">About</a>
+                    </div>
+                </div>
+                <div class="nav_links">
+                    <ul>
+                        <li><a href="#projects_section_main_container">Projects</a></li>
+                        <li><a href="#about_section_main_container">About</a></li>
+                        <li><a href="#contact_section_main_container">Contact</a></li>
+                        <li><a href="#socials_section_main_container">Socials</a></li>
+                    </ul>
                 </div>
             </div>
-            <div class="nav_links">
-                <ul>
-                    <li><a href="#projects_section_main_container">Projects</a></li>
-                    <li><a href="#about_section_main_container">About</a></li>
-                    <li><a href="#contact_section_main_container">Contact</a></li>
-                    <li><a href="#socials_section_main_container">Socials</a></li>
-                </ul>
+            <div id="projects_section_main_container">
+                <div class="projects_section_sm_container">
+                    <h1>PROJECTS</h1>
+                    <h3>I Dabble in Web Design and Development, really all things computer I guess you could say<br><br>
+                        Check out some of my stuff</h3>
+                    <a href="" class="projects_button">Click Here</a>
+                </div>
+                <div class="projects_section_sm_container">
+                    <img src="Resources/Images/Laptop_Coding.png" alt="This is an image of code on a Laptop">
+                </div>
+            </div>
+            <div id="about_section_main_container">
+                <div class="about_section_sm_container">
+                    <img src="Resources/Images/Gaelic_Football.png"
+                        alt="This is an image of an o'neills gaelic football">
+                </div>
+                <div class="about_section_sm_container">
+                    <h1>ABOUT ME</h1>
+                    <h3>Three things to know about me: <br><br> 1) Love a bitta footie<br>2) A pint or two<br> 3) Having
+                        a laugh<br><br> Oh and i hit a few keys on the laptop every now and then<br> <br> Want to know
+                        more</h3>
+                    <a href="" class="about_button">Click Here</a>
+                </div>
+            </div>
+            <div id="contact_section_main_container">
+                <div class="contact_section_content">
+                    <h1 class="contact_me_h1">CONTACT ME</h1>
+                    <h3>Wanna Collab? Have a query? <br> Shoot me a message below</h3>
+                    <span class="name_input"><label for="name">Name</label><input type="text" name="" id=""></span>
+                    <span class="email_input"><label for="email">Email</label><input type="email" name="" id=""></span>
+                    <span class="message_input"><label for="message">Message</label><textarea name="" id="" cols="30"
+                            rows="3"></textarea></span>
+                    <a href="" class="contact_button">SEND</a>
+                </div>
+
+            </div>
+            <div id="socials_section_main_container">
+                <h1>SOCIALS</h1>
+                <div class="socials_section_container_sm">
+                    <img src="Resources/Images/Instagram_Logo.png" alt="This is an image of the Instagram logo">
+                    <a href="https://www.instagram.com/adamoceallaigh/?hl=en">@adamoceallaigh</a>
+                </div>
+                <div class="socials_section_container_sm">
+                    <img src="Resources/Images/Github_Logo.png" alt="This is an image of the Github logo">
+                    <a href="https://github.com/Adamoc14">@Adamoc14</a>
+                </div>
+                <div class="socials_section_container_sm">
+                    <img src="Resources/Images/Codepen_Logo.png" alt="This is an image of the Codepen logo">
+                    <a href="https://codepen.io/Adamoc">@Adamoc</a>
+                </div>
+                <div class="socials_section_container_sm">
+                    <img src="Resources/Images/Linked_In_Logo.png" alt="This is an image of the LinkedIn logo">
+                    <a href="https://www.linkedin.com/in/adamoceallaigh1234/">@adamoceallaigh1234</a>
+                </div>
             </div>
         </div>
-        <div id="projects_section_main_container">
-            <div class="projects_section_sm_container">
-                <h1>PROJECTS</h1>
-                <h3>I Dabble in Web Design and Development, really all things computer I guess you could say<br><br> Check out some of my stuff</h3>
-                <a href="" class="projects_button">Click Here</a>
-            </div>
-            <div class="projects_section_sm_container">
-                <img src="Resources/Images/Laptop_Coding.png" alt="This is an image of code on a Laptop">
-            </div>
-        </div>
-        <div id="about_section_main_container">
-            <div class="about_section_sm_container">
-                <img src="Resources/Images/Gaelic_Football.png" alt="This is an image of an o'neills gaelic football">
-            </div>
-            <div class="about_section_sm_container">
-                <h1>ABOUT ME</h1>
-                <h3>Three things to know about me: <br><br> 1) Love a bitta footie<br>2) A pint or two<br> 3) Having a laugh<br><br> Oh and i hit a few keys on the laptop every now and then<br> <br> Want to know more</h3>
-                <a href="" class="about_button">Click Here</a>
-            </div>
-        </div>
-        <div id="contact_section_main_container">
-            <div class="contact_section_content">
-                <h1 class="contact_me_h1">CONTACT ME</h1>
-                <h3>Wanna Collab? Have a query? <br> Shoot me a message below</h3>
-                <span class="name_input"><label for="name">Name</label><input type="text" name="" id=""></span>
-                <span class="email_input"><label for="email">Email</label><input type="email" name="" id=""></span>
-                <span class="message_input"><label for="message">Message</label><textarea name="" id="" cols="30" rows="3"></textarea></span>
-                <a href="" class="contact_button">SEND</a>
-            </div>
-            
-        </div>
-        <div id="socials_section_main_container">
-            <h1>SOCIALS</h1>
-            <div class="socials_section_container_sm">
-                <img src="Resources/Images/Instagram_Logo.png" alt="This is an image of the Instagram logo">
-                <a href= "https://www.instagram.com/adamoceallaigh/?hl=en">@adamoceallaigh</a>
-            </div>
-            <div class="socials_section_container_sm">
-                <img src="Resources/Images/Github_Logo.png" alt="This is an image of the Github logo">
-                <a href= "https://github.com/Adamoc14">@Adamoc14</a>
-            </div>
-            <div class="socials_section_container_sm">
-                <img src="Resources/Images/Codepen_Logo.png" alt="This is an image of the Codepen logo">
-                <a href= "https://codepen.io/Adamoc">@Adamoc</a>
-            </div>
-            <div class="socials_section_container_sm">
-                <img src="Resources/Images/Linked_In_Logo.png" alt="This is an image of the LinkedIn logo">
-                <a href= "https://www.linkedin.com/in/adamoceallaigh1234/">@adamoceallaigh1234</a>
-            </div>
-        </div>
+        <footer>
+            AdamOC &copy; All Rights Reserved 2020
+        </footer>
     </div>
-    <footer>
-        AdamOC &copy; All Rights Reserved 2020
-    </footer>
 </body>
 
 </html>

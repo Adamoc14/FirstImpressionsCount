@@ -87,3 +87,8 @@ tl.add([firstAnimation, secondAnimation])
 hamburger_display_button.onclick = () => {
     opened_nav_buttons.classList.toggle('open')
 };
+
+
+barba.init({
+    // ...
+})
