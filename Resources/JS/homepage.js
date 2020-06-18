@@ -91,9 +91,7 @@ const pageTransition = () => {
     })
 }
 
-const openNav = () => hamburger_display_button.onclick = () => {
-    opened_nav_buttons.classList.toggle('open')
-};
+
 
 
 
@@ -111,7 +109,9 @@ $(document).ready(() => {
     changeViewBox(viewbox)
 })
 
-
+hamburger_display_button.onclick = () => {
+    opened_nav_buttons.classList.toggle('open')
+};
 
 barba.init({
     sync: true,
@@ -133,6 +133,8 @@ barba.init({
 barba.hooks.afterEnter(() => {
     const logo_tl = logo_tl_func();
     logo_tl.pause(0);
-    openNav;
+    hamburger_display_button.onclick = () => {
+        opened_nav_buttons.classList.toggle('open')
+    };
 });
 
