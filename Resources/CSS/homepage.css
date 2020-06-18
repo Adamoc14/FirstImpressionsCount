@@ -24,7 +24,7 @@
 .logo_heading h1 {
 	font-size: 13vw;
 }
-.mobile_nav_sticky {
+.mobile_nav_sticky , .options {
 	display: none;
 }
 
@@ -44,6 +44,7 @@
 	color: #ffffff;
 	/* font-size: calc(var(--fontSize ) ); */
 }
+
 
 #projects_section_main_container,
 #about_section_main_container {
@@ -221,9 +222,7 @@ footer {
 		border: 2px solid #1d373f;
 	}
 
-	.options {
-		display: none;
-	}
+	
 
 	.options.open {
 		position: fixed;
