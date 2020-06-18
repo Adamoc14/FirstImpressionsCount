@@ -11,7 +11,7 @@ let viewBox = "",
     shapes = Array.from($('.Logo_In_Shapes path'))
     
 const logo_tl_func = () => {
-    logo_tl = gsap.timeline({
+    let logo_tl = gsap.timeline({
         onComplete: moveLogo,
     })
     // Morphing into the Logo
@@ -33,6 +33,7 @@ const logo_tl_func = () => {
         morphSVG: ".Logo_Proper_Text"
     });
     logo_tl.add([firstAnimation, secondAnimation])
+    console.log('Well you should have animated rn')
 }
 
 const changeViewBox = media_query => {
@@ -90,10 +91,6 @@ const pageTransition = () => {
         ease: "Expo.easeInOut",
     })
 }
-
-
-
-
 
 // Helper Functions
 
