@@ -1,5 +1,4 @@
 //Variable Declarations and Function Definitions 
-
 let viewBox = "",
     heading_Pos = [0, 0],
     displayState = ""
@@ -9,20 +8,34 @@ let viewBox = "",
     // Morphing Circles and ellipses to paths to be able to morph them and checking the viewbox for device size
     MorphSVGPlugin.convertToPath("ellipse");
     shapes = Array.from($('.Logo_In_Shapes path'))
+
+const init = () => {
+    viewBox = "",
+    heading_Pos = [0, 0],
+    displayState = ""
+    hamburger_display_button = Array.from($('.mobile_nav_sticky'))[0]
+    opened_nav_buttons = document.querySelector('.options')
+    logo = $(".Actual_Logo_Svg");
+    // Morphing Circles and ellipses to paths to be able to morph them and checking the viewbox for device size
+    MorphSVGPlugin.convertToPath("ellipse");
+    shapes = Array.from($('.Logo_In_Shapes path'))
+}
     
 const logo_tl_func = () => {
     let logo_tl = gsap.timeline({
         onComplete: moveLogo,
     })
     // Morphing into the Logo
-    logo_tl.staggerFrom(shapes, 1, {
+    logo_tl.from(shapes, 1, {
         y: -600,
         autoAlpha: 0,
-        ease: "bounce"
-    }, 0.15)
-    logo_tl.staggerTo(shapes, 1, {
+        ease: "bounce",
+        stagger: 0.15
+    })
+    logo_tl.to(shapes, 1, {
         fill: '#F0C368',
-    }, 0.05)
+        stagger: 0.05
+    })
     let firstAnimation = gsap.to('.shapes', {
         duration: 2,
         morphSVG: ".Logo_Proper_Background"
@@ -47,7 +60,7 @@ const moveLogo = () => {
         attr: { viewBox: viewBox },
         duration: 3
     })
-    fadeInHeadingAndLinks()
+    fadeInHeadingAndLinks();
 }
 
 const fadeInHeadingAndLinks = () => {
@@ -56,10 +69,7 @@ const fadeInHeadingAndLinks = () => {
         scale: 1,
         duration: 3
     })
-    gsap.fromTo('.logo_heading', {
-        x: 1340,
-        y: 20
-    }, {
+    gsap.to('.logo_heading', {
         display: "block",
         x: heading_Pos[0],
         y: heading_Pos[1],
@@ -79,7 +89,7 @@ const pageTransition = () => {
         duration: 1.2,
         width: "100%",
         left: "0%",
-        ease: "Expo.easeInOut",
+        ease: "Expo.InOut",
     })
     .to('.loading_container', {
         background: "#f0c368"
@@ -88,7 +98,7 @@ const pageTransition = () => {
         duration: 1.2,
         width: "0%",
         right: "0%",
-        ease: "Expo.easeInOut",
+        ease: "Expo.InOut",
     })
 }
 
@@ -97,7 +107,6 @@ const pageTransition = () => {
 const delay = (ms) => {
     return new Promise(resolve => setTimeout(resolve, ms));
 }
-
 
 // Initialization Methods
 $(document).ready(() => {
@@ -119,17 +128,22 @@ barba.init({
             await delay(1000);
             done();
         },
-        // async enter(data) {
-        //     // logo_tl.pause(0);
-        //     logo_tl_func()
-        //     // logo_tl.reversed() ? logo_tl.play() : logo_tl.reverse();
-        // },
+        async enter(data) {
+            window.scrollTo(0, 0);
+        },
     }]
 });
 
+// barba.hooks.enter(() => {
+    
+// });
 barba.hooks.afterEnter(() => {
-    const logo_tl = logo_tl_func();
-    logo_tl.pause(0);
+    init()
+    window.matchMedia("(max-width: 600px)").matches ? logo.attr('viewBox', '-350 -700 1274 1680') : logo.attr('viewBox', '-680 -380 2074 1080')
+    var viewbox = window.matchMedia("(max-width: 600px)")
+    changeViewBox(viewbox)
+    console.log(hamburger_display_button)
+    logo_tl_func();
     hamburger_display_button.onclick = () => {
         opened_nav_buttons.classList.toggle('open')
     };
