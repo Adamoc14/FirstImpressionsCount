@@ -11,6 +11,11 @@ var logo = $(".Actual_Logo_Svg");
 
 window.matchMedia("(max-width: 600px)").matches ? logo.attr('viewBox', '-350 -700 1274 1680') : logo.attr('viewBox', '-680 -380 2074 1080')
 
+const logo_tl = new TimelineMax({
+    onComplete: moveLogo,
+    defaults: { ease: "power3.inOut", duration: 0.8 }
+});
+
 var firstAnimation = gsap.to('.shapes', {
     duration: 2,
     morphSVG: ".Logo_Proper_Background"
@@ -20,11 +25,6 @@ var secondAnimation = gsap.to('.textShape', {
     duration: 2,
     fill: '#1D373F',
     morphSVG: ".Logo_Proper_Text"
-});
-
-const tl = new TimelineMax({
-    onComplete: moveLogo,
-    defaults: { ease: "power3.inOut", duration: 0.8 }
 });
 
 var shapes = Array.from($('.Logo_In_Shapes path'));
@@ -114,16 +114,16 @@ function fadeIn() {
 
 // Initialization Methods
 
-tl.staggerFrom(shapes, 1, {
+logo_tl.staggerFrom(shapes, 1, {
     y: -600,
     autoAlpha: 0,
     ease: "bounce"
 }, 0.15);
-tl.staggerTo(shapes, 1, {
+logo_tl.staggerTo(shapes, 1, {
     fill: '#F0C368'
 }, 0.05)
 
-tl.add([firstAnimation, secondAnimation])
+logo_tl.add([firstAnimation, secondAnimation])
 
 hamburger_display_button.onclick = () => {
     opened_nav_buttons.classList.toggle('open')
@@ -144,7 +144,7 @@ barba.init({
         },
         async after(data) {
             // tl.pause(0);
-            tl.reversed() ? tl.play() : tl.reverse();
+            logo_tl.reversed() ? logo_tl.play() : logo_tl.reverse();
         },
         // async once(data) {
         //     contentAnimation();
