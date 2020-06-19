@@ -85,7 +85,7 @@ const fadeInHeadingAndLinks = () => {
 const pageTransition = () => {
     var tl = gsap.timeline();
     tl.set('.loading_container img' , {
-        scale: 0.5
+        scale: 0.3
     })
     tl.to('.loading_container', {
         duration: 1.2,
@@ -94,7 +94,7 @@ const pageTransition = () => {
         ease: "circ.out",
     })
     .to('.loading_container img' , {
-        scale : 0.7,
+        scale : 0.6,
         duration: 1
     } , "-=1.2")
     
