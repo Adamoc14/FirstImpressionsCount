@@ -1,20 +1,138 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <meta http-equiv="X-UA-Compatible" content="ie=edge">
     <link rel="stylesheet" href="../../Resources/CSS/basics.css">
-    <link rel="stylesheet" href="../../Resources/CSS/homepage.css">
-    <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.2.6/gsap.min.js"></script>
-    <script src="Resources/JS/MorphSVGPlugin.min.js"></script>
+    <link rel="stylesheet" href="../../Resources/CSS/about.css">
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.3.4/gsap.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.3.4/ScrollTrigger.min.js"></script>
+    <script src="Resources/JS/DrawSVGPlugin.min.js"></script>
+    <script src="Resources/JS/CSSRulePlugin.min.js"></script>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
     <script src="https://unpkg.com/@barba/core"></script>
-    <!-- <script defer src="Resources/JS/homepage.js"></script> -->
+    <script defer src="Resources/JS/about.js"></script>
 </head>
+
 <body data-barba="wrapper">
     <div class="wrapper" data-barba="container" data-barba-namespace="about">
-        Well This is about page
+        <a href="" class="home_button">Home</a>
+        <svg viewBox="-2000 -250 5208 2735" fill="none" xmlns="http://www.w3.org/2000/svg">
+            <g class="My_Face">
+                <path class="Main_Face_Part"
+                    d="M257 1397L200.5 1289L160.5 1181H126.5H98L41 1141.5V919.5L7 851.5L41 806H98V431L126.5 470.5L200.5 510.5L280.5 564.5L348 616L371 669.5L439 692.5L504 723.5H820L1036 646.5L1092.5 586V749V851.5L1138 806L1172 851.5V919.5L1138 1022V1107V1181L1092.5 1209.5L1036 1181L1001.5 1289L896 1520L843.5 1621L734.5 1709.5L632.5 1728.5L535.5 1709.5L439 1647L348 1545L257 1397Z"
+                    stroke="#F0C368" stroke-width="11" />
+                <path class="Main_Hair_Part"
+                    d="M120.615 362L84 453L120.615 476L175.538 504L255.231 538.5L328 601L370.538 646.5L365.5 689H439.5L482 708L542.769 726H677.385H800.154H885.769L965.462 680.5L1100.08 646.5L1155 601V538.5L1173.31 476L1204 424.5V362L1155 299.5L1051.08 186L965.462 129L885.769 72.5L800.154 38L738.769 4H677.385L542.769 38H445.308L377.462 72.5L298.308 129L224.538 186L157.231 248.5L120.615 299.5V362Z"
+                    fill="#F0C368" stroke="#F0C368" stroke-width="7" />
+                <path class="Hair_Strands"
+                    d="M602.5 415H704.5L736.5 485.5L800.5 562M768.5 300L800.5 344.5H871L928.5 415M308 344.5L359.5 415V485.5L455 562"
+                    stroke="#1D373F" stroke-width="4" />
+                <path class="Eyebrow_1" d="M275 817L332 783H394.5L474 817" stroke="#F0C368" stroke-width="23" />
+                <path class="Eyebrow_2" d="M730 817L787 783H849.5L929 817" stroke="#F0C368" stroke-width="23" />
+                <path class="Eye_Part_1"
+                    d="M302.5 873L259 901.5L316 930H367H431.5L490.5 901.5L444.5 873L367 857L302.5 873Z" stroke="#F0C368"
+                    stroke-width="5" />
+                <path class="Eye_Part_2"
+                    d="M757.5 873L714 901.5L771 930H822H886.5L945.5 901.5L899.5 873L822 857L757.5 873Z" stroke="#F0C368"
+                    stroke-width="5" />
+                <ellipse class="Eyeball_2" cx="830.292" cy="895.247" rx="45.2922" ry="38.2468" fill="#F0C368" />
+                <ellipse class="Eyeball_1" cx="375.292" cy="895.247" rx="45.2922" ry="38.2468" fill="#F0C368" />
+                <ellipse class="Pupil_2" cx="826.143" cy="900.13" rx="22.1429" ry="20.1299" fill="#1D373F" />
+                <ellipse class="Pupil_1" cx="381.219" cy="903.299" rx="22.1429" ry="20.1299" fill="#1D373F" />
+                <path class="Main_Nose_Part"
+                    d="M569 817L535 880.5L461 1176L496 1162L525.5 1158.5L550.5 1168L578 1203L603 1211.5L635 1203L656.5 1168L682.5 1158.5L700 1162L745 1176L720 1055.5L690.5 939L656.5 851L627.5 817H569Z"
+                    stroke="#F0C368" stroke-width="11" />
+                <path class="Nostril_1"
+                    d="M505.606 1186.46L497.054 1176.97L491.188 1167.27L502.141 1160.75L520.784 1159.78L542.253 1166.51L556.53 1177.8L562.275 1189.56L551.444 1194.02L533.278 1195.14L518.965 1190.65L505.606 1186.46Z"
+                    fill="#F0C368" />
+                <path class="Nostril_2"
+                    d="M657.53 1172.27L648.449 1180.91L650.125 1187.19L654.28 1189.18L662.3 1190.15L675.827 1186.54L687.904 1183.32L698.049 1180.61L704.715 1172.62L707.387 1165.18L701.492 1160.54L692.377 1159.35L682.232 1162.06L670.155 1165.28L657.53 1172.27Z"
+                    fill="#F0C368" />
+                <path class="Tongue_Part"
+                    d="M517.514 1366.13L517.512 1366.13L529.503 1382.69L557.508 1399.9L607.003 1399.9L650.003 1399.9L671.489 1389.02L689 1379.32L698.485 1372.5L706 1363.36L671.489 1363.36L629.996 1364.11L592.002 1364.79L557.508 1365.41L517.514 1366.13Z"
+                    fill="#F0C368" />
+                <line class="Tongue_Seperator" x1="613.5" y1="1365" x2="613.5" y2="1396" stroke="black"
+                    stroke-opacity="0.1" />
+                <path class="Lip_Upper"
+                    d="M529.5 1356H492L456 1365.5L432.5 1379H395L412 1356L443.5 1341.5L465.5 1334L492 1324.5L529.5 1316L581 1307H612.5H641.5H675.5L721.5 1316L750 1324.5L787.5 1341.5L818.5 1379H774L750 1365.5L721.5 1356H675.5H641.5L612.5 1341.5L581 1356H529.5Z"
+                    stroke="#F0C368" stroke-width="7" />
+                <path class="Lip_Lower"
+                    d="M526.5 1402H489L453 1392.5L429.5 1379H392L409 1402L440.5 1416.5L462.5 1424L489 1433.5L526.5 1442L578 1451H609.5H638.5H672.5L718.5 1442L747 1433.5L784.5 1416.5L815.5 1379H771L747 1392.5L718.5 1402H672.5H638.5H609.5H578H526.5Z"
+                    stroke="#F0C368" stroke-width="7" />
+            </g>
+        </svg>
+        <div class="arrow"></div>
+        <div class="content">
+            <h2 class="first">Hey i'm Adam O' Ceallaigh, that's me above hahaha.
+                I'm an <img src="https://www.countryflags.io/ie/flat/64.png" alt="" class="flag"> lad
+            </h2>
+            <h2 class="second">I'm a software developer based in Tipperary and Cork
+            </h2>
+            <h2 class="third">My interests include &#x1F355; , &#x1F3CA;, &#x1F3A7; and all things &#x1F4BB;-related
+            </h2>
+        </div>
+        <div class="skillsContainer">
+            <div class="skillContainer">
+                <h2>HTML</h2>
+                <div class="bar" data-width="39vw"></div>
+                <h3 class="percentage">95%</h3>
+            </div>
+            <div class="skillContainer">
+                <h2>CSS</h2>
+                <div class="bar" data-width="39vw"></div>
+                <h3 class="percentage">95%</h3>
+            </div>
+            <div class="skillContainer">
+                <h2>JS</h2>
+                <div class="bar" data-width="37vw"></div>
+                <h3 class="percentage">90%</h3>
+            </div>
+            <div class="skillContainer">
+                <h2>JQuery</h2>
+                <div class="bar" data-width="35vw"></div>
+                <h3 class="percentage">85%</h3>
+            </div>
+            <div class="skillContainer">
+                <h2>Python</h2>
+                <div class="bar" data-width="35vw"></div>
+                <h3 class="percentage">85%</h3>
+            </div>
+            <div class="skillContainer">
+                <h2>React</h2>
+                <div class="bar" data-width="33vw"></div>
+                <h3 class="percentage">80%</h3>
+            </div>
+            <div class="skillContainer">
+                <h2>VueJS</h2>
+                <div class="bar" data-width="35vw"></div>
+                <h3 class="percentage">85%</h3>
+            </div>
+            <div class="skillContainer">
+                <h2>NodeJS</h2>
+                <div class="bar" data-width="35vw"></div>
+                <h3 class="percentage">85%</h3>
+            </div>
+            <div class="skillContainer">
+                <h2>Flutter</h2>
+                <div class="bar" data-width="37vw"></div>
+                <h3 class="percentage">90%</h3>
+            </div>
+            <div class="skillContainer">
+                <h2>Java</h2>
+                <div class="bar" data-width="31vw"></div>
+                <h3 class="percentage">75%</h3>
+            </div>
+            <div class="skillContainer">
+                <h2>Swift</h2>
+                <div class="bar" data-width="31vw"></div>
+                <h3 class="percentage">75%</h3>
+            </div>
+        </div>
+
     </div>
 </body>
+
 </html>

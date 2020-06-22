@@ -1,0 +1,81 @@
+body {
+	background: #1d373f;
+	font-size: 1em;
+	color: #f0c368;
+}
+
+a {
+	text-decoration: none;
+	color: white;
+}
+
+.home_button {
+	padding: 1em 2em;
+	background: #f0c368;
+	color: #1d373f;
+}
+
+.content {
+	padding: 4em 2em;
+	height: 130vh;
+}
+
+.flag {
+	transform: scale(0);
+}
+
+.content h2 {
+	text-align: center;
+    font-size: 2.5em;
+    line-height: 2em;
+	transform: translateY(0%) rotateX(90deg);
+	transform-origin: bottom center;
+}
+
+.skillsContainer {
+	padding: 4em 2em;
+	height: 150vh;
+	background: #1d373f;
+	color: #f0c368;
+	display: flex;
+	align-items: center;
+	flex-direction: column;
+}
+
+.skillContainer {
+	display: flex;
+	width: 60vw;
+    justify-content: space-between;
+    align-items: center;
+	margin-bottom: 1em;
+}
+
+.skillContainer h2 {
+    width: 10vw;
+}
+
+.bar{
+    width: 40vw;
+    background:#F0C368;
+    color: #1D373F;
+    height:5vh;
+    
+}
+/* 
+.animating:before {
+	content: "";
+	position: absolute;
+	background: #f0c368;
+	height: 6vh;
+	margin-top: -1.15vh;
+	color: white;
+	line-height: 7vh;
+	margin-left: -1vw;
+}
+
+.animating:after {
+	position: relative;
+	left: 42vw;
+	line-height: 7vh;
+	font-size: 1.3em;
+} */
