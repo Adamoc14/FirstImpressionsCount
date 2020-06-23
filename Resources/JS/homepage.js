@@ -169,13 +169,13 @@ barba.init({
     ],
 });
 
-//Global Hooks 
-barba.hooks.leave(() => {
-    const done = this.async();
-    pageTransition();
-    await delay(1000);
-    done();
-})
-barba.hooks.enter(() => {
-    window.scrollTo(0, 0);
-})
+// //Global Hooks 
+// barba.hooks.leave(() => {
+//     const done = this.async();
+//     pageTransition();
+//     await delay(1000);
+//     done();
+// })
+// barba.hooks.enter(() => {
+//     window.scrollTo(0, 0);
+// })
