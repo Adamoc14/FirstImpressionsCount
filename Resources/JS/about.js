@@ -1,7 +1,7 @@
 // Variable Declarations and Function Definitions
 let factsContainer_sm = document.querySelector(".factsContainer_sm")
 
-const init =() => {
+const aboutInit =() => {
     factsContainer_sm = document.querySelector(".factsContainer_sm")
 }
 
@@ -118,7 +118,7 @@ const scroll_facts_tl_func = () => {
 
 
 //Initialization Methods
-init()
+aboutInit()
 face_tl_func()
 scroll_p_tl_func()
 scroll_skills_tl_func()

@@ -9,7 +9,7 @@ logo = $(".Actual_Logo_Svg")
 MorphSVGPlugin.convertToPath("ellipse");
 shapes = Array.from($('.Logo_In_Shapes path'))
 
-const init = () => {
+const homeInit = () => {
     viewBox = "",
         heading_Pos = [0, 0],
         displayState = ""
@@ -147,7 +147,7 @@ barba.init({
         {
             namespace: 'home',
             afterEnter() {
-                init()
+                homeInit()
                 window.matchMedia("(max-width: 600px)").matches ? logo.attr('viewBox', '-350 -700 1274 1680') : logo.attr('viewBox', '-680 -380 2074 1080')
                 let viewbox = window.matchMedia("(max-width: 600px)")
                 changeViewBox(viewbox)
@@ -160,7 +160,7 @@ barba.init({
         {
             namespace: 'about',
             afterEnter() {
-                init()
+                aboutInit()
                 face_tl_func()
                 scroll_p_tl_func()
                 scroll_skills_tl_func()
