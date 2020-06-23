@@ -166,6 +166,9 @@ footer {
 }
 
 @media (max-width: 600px) {
+    .factsContainer {
+        line-height: 5vh;
+    }
     #socials_section_main_container {
 		height: 100vh;
 		justify-content: center;
