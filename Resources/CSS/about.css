@@ -1,12 +1,27 @@
-body {
-	background: #1d373f;
-	font-size: 1em;
-	color: #f0c368;
+.loading_container{
+	position: fixed;
+	display:flex;
+	justify-content: center;
+	align-items: center;
+    width: 100%;
+    z-index: 10;
+    pointer-events: none;
+	top: 0;
+	left: 0;
+	overflow:hidden;
+	width: 0vw;
+	height: 100vh;
+	background: #f0c368;
+}
+.wrapper {
+	min-height: 100vh;
+    background: #1d373f;
+    overflow-x: hidden;
+    color: #f0c368;
 }
 
-a {
-	text-decoration: none;
-	color: white;
+.header {
+    padding: 1.3em 2em;
 }
 
 .home_button {
@@ -34,9 +49,7 @@ a {
 
 .skillsContainer {
 	padding: 4em 2em;
-	height: 150vh;
-	background: #1d373f;
-	color: #f0c368;
+	height: 100vh;
 	display: flex;
 	align-items: center;
 	flex-direction: column;
@@ -54,6 +67,10 @@ a {
     width: 10vw;
 }
 
+.barContainer{
+    width: 40vw;
+}
+
 .bar{
     width: 40vw;
     background:#F0C368;
@@ -61,21 +78,86 @@ a {
     height:5vh;
     
 }
-/* 
-.animating:before {
-	content: "";
-	position: absolute;
-	background: #f0c368;
-	height: 6vh;
-	margin-top: -1.15vh;
-	color: white;
-	line-height: 7vh;
-	margin-left: -1vw;
+
+.percentage{
+    transform: scale(0);
 }
 
-.animating:after {
-	position: relative;
-	left: 42vw;
-	line-height: 7vh;
-	font-size: 1.3em;
-} */
+.factsContainer {
+    padding: 0em 2em;
+    text-align: center;
+    line-height: 10vh;
+}
+
+.factsContainer h2 {
+    font-size: 1.8em;
+    transform: scale(0);
+    padding: 2em 0em;
+    margin-bottom: 15vh;
+}
+
+.factsContainer_sm {
+    display: flex;
+    width: 300vw;
+}
+
+.fact {
+    display: flex;
+    flex-direction: column;
+    height: 40vh;
+    flex: 1;
+    justify-content: space-between;
+    padding: 1em;
+    align-items: center;
+}
+
+.fact img {
+    width: 25vw;
+    height: 25vh;
+    margin: 1em;
+}
+
+#socials_section_main_container {
+	display: flex;
+    width: 100vw;
+    margin-top: 15vh;
+    height: 200vh;
+	flex-direction: column;
+	align-items: center;
+}
+
+#socials_section_main_container h1 {
+	font-size: calc(var(--fontSize) + 1.5vw);
+	color: #f0c368;
+}
+
+#socials_section_main_container h1 {
+	padding: 1em;
+	padding-top: 1.5em;
+}
+
+.socials_section_container_sm {
+	display: flex;
+	align-items: center;
+	justify-content: space-between;
+	width: 67vw;
+	padding: 1.2em;
+}
+
+.socials_section_container_sm img {
+	width: 15vw;
+	height: 30vh;
+}
+
+.socials_section_container_sm a {
+	color: #f0c368;
+}
+
+footer {
+	background: #f0c368;
+	display: flex;
+	justify-content: center;
+	align-items: center;
+	padding: 3em;
+}
+

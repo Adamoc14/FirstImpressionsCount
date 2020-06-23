@@ -31,53 +31,31 @@ const scroll_p_tl_func = () => {
         scrollTrigger: {
             trigger: '.content',
             start: "top center",
+            end: "+=1000",
             markers: true,
+            scrub: true
             // pin: true
         }
     })
     scroll_tl.to('.first', {
         transform: "rotateX(50deg) rotateZ(331deg) translateX(42px)",
-        duration: 1,
+        duration: .5,
     }),
         scroll_tl.to('.flag', {
             scale: 1
-        }, '-=.3'),
+        }, '-=.1'),
         scroll_tl.addLabel("first_down")
     scroll_tl.to('.second', {
         transform: "rotateX(50deg) rotateZ(331deg) translateX(42px)",
-        duration: 1,
+        duration: 2,
     }, "first_down-=.1")
     scroll_tl.addLabel("second_down")
     scroll_tl.to('.third', {
         transform: "rotateX(50deg) rotateZ(331deg) translateX(42px)",
-        duration: 1,
-    }, "second_down+=.1")
+        duration: 2,
+    }, "second_down-=.01")
 }
 
-// const moveBars = (num, bars, scroll_tl) => {
-//     console.log(num, bars);
-//     if (num === "undefined" || bars === "undefined") return;
-//     // setTimeout(()=>{bars[num-1].classList.remove('animating')} , 2000)
-//     bars[num].classList.add('animating');
-//     console.log(num, bars);
-//     let barsRefined = bars.filter(bar => bar.classList.contains('animating') ? true : false)
-
-//     barsRefined.map(bar => {
-//         let barBefore =
-//             CSSRulePlugin.getRule(`.${bar.classList[1]}:before`),
-//             barAfter =
-//                 CSSRulePlugin.getRule(`.${bar.classList[1]}:after`)
-//         console.log(barBefore, barAfter)
-//         scroll_tl.to(barBefore, {
-//             cssRule: {
-//                 width: bar.dataset.width,
-//             },
-//             duration: 2,
-//         })
-//     })
-//     num += 1
-//     moveBars(num, bars)
-// }
 
 const scroll_skills_tl_func = () => {
     let scroll_tl = gsap.timeline({
@@ -85,26 +63,55 @@ const scroll_skills_tl_func = () => {
             trigger: '.skillsContainer',
             start: "top center",
             markers: true,
+
         }
     }),
-    barWidth = ""
-    bars = [...document.querySelectorAll('.bar')]
-    // moveBars(number, bars, scroll_tl)
-    // bars.map(bar => {
-    //     barWidth = bar.dataset.width;
-    //     scroll_tl.to(bars , {
-    //         width: barWidth,
-    //         stagger: 1.3
-    //     });
-    // });
+        barWidth = "",
+        bars = [...document.querySelectorAll('.bar')]
     bars.map(bar => {
         barWidth = bar.dataset.width;
-    });
-    scroll_tl.to(bars , {
-        width: barWidth,
-        stagger: 1.3
-    });
+        let barAnimation = gsap.to(bar, {
+            width: barWidth,
+        }),
+            percentageAniamtion = gsap.to('.percentage', {
+                scale: 1,
+            })
+        scroll_tl.add([barAnimation, percentageAniamtion]);
+    })
 
+}
+
+const scroll_facts_tl_func = () => {
+    let scroll_tl = gsap.timeline({
+        scrollTrigger: {
+            trigger: '.factsContainer',
+            start: "top center",
+            // pin: true,
+            scrub: true,
+            end: "+=300",
+            markers: true,
+        }
+    }),
+    facts = [...document.querySelectorAll('.fact')]
+    scroll_tl.to('.factsContainer h2', {
+        scale: 1.5,
+        duration: 1,
+        ease: "slow"
+    })
+    scroll_tl.to(facts, {
+        xPercent: -85 * (facts.length - 1),
+        scrollTrigger: {
+            trigger: ".factsContainer_sm",
+            start: "center center",
+            pin: true,
+            // pinSpacing:false,
+            markers: true,
+            scrub: 1,
+            snap: 1 / (facts.length - 1),
+            // base vertical scrolling on how wide the container is so it feels more natural.
+            end: () => "+=" + document.querySelector(".factsContainer_sm").offsetWidth
+        }
+    });
 }
 
 
@@ -113,3 +120,4 @@ const scroll_skills_tl_func = () => {
 face_tl_func();
 scroll_p_tl_func();
 scroll_skills_tl_func();
+scroll_facts_tl_func();
