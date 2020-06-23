@@ -165,3 +165,13 @@ footer {
 	padding: 3em;
 }
 
+@media (max-width: 600px) {
+    #socials_section_main_container {
+		height: 100vh;
+		justify-content: center;
+	}
+
+	.socials_section_container_sm img {
+		height: 10vh;
+	}
+}

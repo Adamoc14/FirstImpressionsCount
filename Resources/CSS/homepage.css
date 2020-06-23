@@ -246,18 +246,6 @@ footer {
 		text-align: center;
 	}
 
-	/* .options a {
-		height: 80px;
-		width: 80px;
-		border-radius: 50%;
-		line-height: 80px;
-		text-align: center;
-		padding: 2.1em 2em;
-		margin-top: 1em;
-		background: #f0c368;
-		border: 2px solid #fff;
-	} */
-
 	.options a {
 		border-radius: 50%;
 		line-height: 3.5em;
