@@ -2,17 +2,17 @@
 let viewBox = "",
     heading_Pos = [0, 0],
     displayState = ""
-    hamburger_display_button = Array.from($('.mobile_nav_sticky'))[0]
-    opened_nav_buttons = document.querySelector('.options')
-    logo = $(".Actual_Logo_Svg");
-    // Morphing Circles and ellipses to paths to be able to morph them and checking the viewbox for device size
-    MorphSVGPlugin.convertToPath("ellipse");
-    shapes = Array.from($('.Logo_In_Shapes path'))
+hamburger_display_button = Array.from($('.mobile_nav_sticky'))[0]
+opened_nav_buttons = document.querySelector('.options')
+logo = $(".Actual_Logo_Svg");
+// Morphing Circles and ellipses to paths to be able to morph them and checking the viewbox for device size
+MorphSVGPlugin.convertToPath("ellipse");
+shapes = Array.from($('.Logo_In_Shapes path'))
 
 const init = () => {
     viewBox = "",
-    heading_Pos = [0, 0],
-    displayState = ""
+        heading_Pos = [0, 0],
+        displayState = ""
     hamburger_display_button = Array.from($('.mobile_nav_sticky'))[0]
     opened_nav_buttons = document.querySelector('.options')
     logo = $(".Actual_Logo_Svg");
@@ -20,7 +20,7 @@ const init = () => {
     MorphSVGPlugin.convertToPath("ellipse");
     shapes = Array.from($('.Logo_In_Shapes path'))
 }
-    
+
 const logo_tl_func = () => {
     let logo_tl = gsap.timeline({
         onComplete: moveLogo,
@@ -84,7 +84,7 @@ const fadeInHeadingAndLinks = () => {
 
 const pageTransition = () => {
     var tl = gsap.timeline();
-    tl.set('.loading_container img' , {
+    tl.set('.loading_container img', {
         scale: 0.3
     })
     tl.to('.loading_container', {
@@ -93,21 +93,21 @@ const pageTransition = () => {
         left: "0%",
         ease: "circ.out",
     })
-    .to('.loading_container img' , {
-        scale : 0.6,
-        duration: 1
-    } , "-=1.2")
-    
-    .to('.loading_container', {
-        duration: 1.2,
-        width: "0%",
-        right: "0%",
-        ease: "circ.out",
-    })
-    .to('.loading_container img' , {
-        scale : 0.3,
-        duration: 1.2
-    }, "-=1.3")
+        .to('.loading_container img', {
+            scale: 0.6,
+            duration: 1
+        }, "-=1.2")
+
+        .to('.loading_container', {
+            duration: 1.2,
+            width: "0%",
+            right: "0%",
+            ease: "circ.out",
+        })
+        .to('.loading_container img', {
+            scale: 0.3,
+            duration: 1.2
+        }, "-=1.3")
 }
 
 // Helper Functions
@@ -127,33 +127,74 @@ hamburger_display_button.onclick = () => {
     opened_nav_buttons.classList.toggle('open')
 };
 
+// barba.init({
+//     sync: true,
+//     transitions: [{
+//         async leave(data) {
+//             const done = this.async();
+//             pageTransition();
+//             await delay(1000);
+//             done();
+//         },
+//         async enter(data) {
+//             window.scrollTo(0, 0);
+//         },
+//     }]
+// });
+
+// // barba.hooks.enter(() => {
+
+// // });
+// barba.hooks.afterEnter(() => {
+//     init()
+//     window.matchMedia("(max-width: 600px)").matches ? logo.attr('viewBox', '-350 -700 1274 1680') : logo.attr('viewBox', '-680 -380 2074 1080')
+//     var viewbox = window.matchMedia("(max-width: 600px)")
+//     changeViewBox(viewbox)
+//     console.log(hamburger_display_button)
+//     logo_tl_func();
+//     hamburger_display_button.onclick = () => {
+//         opened_nav_buttons.classList.toggle('open')
+//     };
+// });
+
 barba.init({
     sync: true,
     transitions: [{
-        async leave(data) {
+        async leave() {
             const done = this.async();
             pageTransition();
             await delay(1000);
             done();
         },
-        async enter(data) {
+        async enter() {
             window.scrollTo(0, 0);
         },
-    }]
-});
-
-// barba.hooks.enter(() => {
-    
-// });
-barba.hooks.afterEnter(() => {
-    init()
-    window.matchMedia("(max-width: 600px)").matches ? logo.attr('viewBox', '-350 -700 1274 1680') : logo.attr('viewBox', '-680 -380 2074 1080')
-    var viewbox = window.matchMedia("(max-width: 600px)")
-    changeViewBox(viewbox)
-    console.log(hamburger_display_button)
-    logo_tl_func();
-    hamburger_display_button.onclick = () => {
-        opened_nav_buttons.classList.toggle('open')
-    };
+    }],
+    views: [
+        {
+            namespace: 'home',
+            afterEnter() {
+                init()
+                window.matchMedia("(max-width: 600px)").matches ? logo.attr('viewBox', '-350 -700 1274 1680') : logo.attr('viewBox', '-680 -380 2074 1080')
+                var viewbox = window.matchMedia("(max-width: 600px)")
+                changeViewBox(viewbox)
+                console.log(hamburger_display_button)
+                logo_tl_func();
+                hamburger_display_button.onclick = () => {
+                    opened_nav_buttons.classList.toggle('open')
+                }
+            },
+        },
+        {
+            namespace: 'about',
+            afterEnter(data) {
+                face_tl_func();
+                scroll_p_tl_func();
+                scroll_skills_tl_func();
+                scroll_facts_tl_func();
+            },
+        }
+        // More namespaces, like maybe 'about' for your about.html ...
+    ],
 });
 

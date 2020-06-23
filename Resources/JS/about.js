@@ -1,8 +1,4 @@
 // Variable Declarations and Function Definitions
-let number = 0;
-gsap.registerPlugin(DrawSVGPlugin)
-gsap.registerPlugin(ScrollTrigger)
-gsap.registerPlugin(CSSRulePlugin)
 
 const face_tl_func = () => {
     let face_tl = gsap.timeline(),
@@ -92,7 +88,7 @@ const scroll_facts_tl_func = () => {
             markers: true,
         }
     }),
-    facts = [...document.querySelectorAll('.fact')]
+        facts = [...document.querySelectorAll('.fact')]
     scroll_tl.to('.factsContainer h2', {
         scale: 1.5,
         duration: 1,
@@ -114,6 +110,40 @@ const scroll_facts_tl_func = () => {
     });
 }
 
+const pageTransition = () => {
+    var tl = gsap.timeline();
+    tl.set('.loading_container img', {
+        scale: 0.3
+    })
+    tl.to('.loading_container', {
+        duration: 1.2,
+        width: "100%",
+        left: "0%",
+        ease: "circ.out",
+    })
+        .to('.loading_container img', {
+            scale: 0.6,
+            duration: 1
+        }, "-=1.2")
+
+        .to('.loading_container', {
+            duration: 1.2,
+            width: "0%",
+            right: "0%",
+            ease: "circ.out",
+        })
+        .to('.loading_container img', {
+            scale: 0.3,
+            duration: 1.2
+        }, "-=1.3")
+}
+
+// Helper Functions
+
+const delay = (ms) => {
+    return new Promise(resolve => setTimeout(resolve, ms));
+}
+
 
 //Initialization Methods
 
@@ -121,3 +151,50 @@ face_tl_func();
 scroll_p_tl_func();
 scroll_skills_tl_func();
 scroll_facts_tl_func();
+
+// barba.init({
+//     sync: true,
+//     transitions: [{
+//         async leave() {
+//             const done = this.async();
+//             pageTransition();
+//             await delay(1000);
+//             done();
+//         },
+//         async enter() {
+//             window.scrollTo(0, 0);
+//         },
+//     }],
+//     views: [
+//         {
+//             namespace: 'home',
+//             afterEnter() {
+//                 init()
+//                 window.matchMedia("(max-width: 600px)").matches ? logo.attr('viewBox', '-350 -700 1274 1680') : logo.attr('viewBox', '-680 -380 2074 1080')
+//                 var viewbox = window.matchMedia("(max-width: 600px)")
+//                 changeViewBox(viewbox)
+//                 console.log(hamburger_display_button)
+//                 logo_tl_func();
+//                 hamburger_display_button.onclick = () => {
+//                     opened_nav_buttons.classList.toggle('open')
+//                 }
+//             },
+//         },
+//         {
+//             namespace: 'about',
+//             afterEnter(data) {
+//                 face_tl_func();
+//                 scroll_p_tl_func();
+//                 scroll_skills_tl_func();
+//                 scroll_facts_tl_func();
+//             },
+//         }
+//         // More namespaces, like maybe 'about' for your about.html ...
+//     ],
+// });
+
+// barba.hooks.afterEnter(() => {
+
+//     //about 
+
+// });
