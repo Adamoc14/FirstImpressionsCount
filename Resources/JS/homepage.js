@@ -1,10 +1,10 @@
 //Variable Declarations and Function Definitions 
-let viewBox = "",
-    heading_Pos = [0, 0],
-    displayState = ""
+let viewBox = ""
+heading_Pos = [0, 0]
+displayState = ""
 hamburger_display_button = Array.from($('.mobile_nav_sticky'))[0]
 opened_nav_buttons = document.querySelector('.options')
-logo = $(".Actual_Logo_Svg");
+logo = $(".Actual_Logo_Svg")
 // Morphing Circles and ellipses to paths to be able to morph them and checking the viewbox for device size
 MorphSVGPlugin.convertToPath("ellipse");
 shapes = Array.from($('.Logo_In_Shapes path'))
@@ -127,39 +127,12 @@ hamburger_display_button.onclick = () => {
     opened_nav_buttons.classList.toggle('open')
 }
 
-// barba.init({
-//     sync: true,
-//     transitions: [{
-//         async leave(data) {
-//             const done = this.async();
-//             pageTransition();
-//             await delay(1000);
-//             done();
-//         },
-//         async enter(data) {
-//             window.scrollTo(0, 0);
-//         },
-//     }]
-// });
-
-// // barba.hooks.enter(() => {
-
-// // });
-// barba.hooks.afterEnter(() => {
-//     init()
-//     window.matchMedia("(max-width: 600px)").matches ? logo.attr('viewBox', '-350 -700 1274 1680') : logo.attr('viewBox', '-680 -380 2074 1080')
-//     var viewbox = window.matchMedia("(max-width: 600px)")
-//     changeViewBox(viewbox)
-//     console.log(hamburger_display_button)
-//     logo_tl_func();
-//     hamburger_display_button.onclick = () => {
-//         opened_nav_buttons.classList.toggle('open')
-//     };
-// });
-
 barba.init({
     sync: true,
     transitions: [{
+        name: 'transition-base',
+        preventRunning: true,
+        timeout: 5000,
         async leave() {
             const done = this.async();
             pageTransition();
@@ -176,9 +149,8 @@ barba.init({
             afterEnter() {
                 init()
                 window.matchMedia("(max-width: 600px)").matches ? logo.attr('viewBox', '-350 -700 1274 1680') : logo.attr('viewBox', '-680 -380 2074 1080')
-                var viewbox = window.matchMedia("(max-width: 600px)")
+                let viewbox = window.matchMedia("(max-width: 600px)")
                 changeViewBox(viewbox)
-                console.log(hamburger_display_button)
                 logo_tl_func();
                 hamburger_display_button.onclick = () => {
                     opened_nav_buttons.classList.toggle('open')
@@ -187,14 +159,23 @@ barba.init({
         },
         {
             namespace: 'about',
-            afterEnter(data) {
+            afterEnter() {
                 face_tl_func();
                 scroll_p_tl_func();
                 scroll_skills_tl_func();
                 scroll_facts_tl_func();
             },
         }
-        // More namespaces, like maybe 'about' for your about.html ...
     ],
 });
 
+//Global Hooks 
+barba.hooks.leave(() => {
+    const done = this.async();
+    pageTransition();
+    await delay(1000);
+    done();
+})
+barba.hooks.enter(() => {
+    window.scrollTo(0, 0);
+})
