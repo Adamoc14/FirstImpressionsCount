@@ -125,7 +125,7 @@ $(document).ready(() => {
 
 hamburger_display_button.onclick = () => {
     opened_nav_buttons.classList.toggle('open')
-};
+}
 
 // barba.init({
 //     sync: true,
