@@ -160,10 +160,11 @@ barba.init({
         {
             namespace: 'about',
             afterEnter() {
-                face_tl_func();
-                scroll_p_tl_func();
-                scroll_skills_tl_func();
-                scroll_facts_tl_func();
+                init()
+                face_tl_func()
+                scroll_p_tl_func()
+                scroll_skills_tl_func()
+                scroll_facts_tl_func()
             },
         }
     ],

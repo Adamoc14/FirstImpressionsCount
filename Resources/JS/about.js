@@ -1,4 +1,9 @@
 // Variable Declarations and Function Definitions
+let factsContainer_sm = document.querySelector(".factsContainer_sm")
+
+const init =() => {
+    factsContainer_sm = document.querySelector(".factsContainer_sm")
+}
 
 const face_tl_func = () => {
     let face_tl = gsap.timeline(),
@@ -105,7 +110,7 @@ const scroll_facts_tl_func = () => {
             scrub: 1,
             snap: 1 / (facts.length - 1),
             // base vertical scrolling on how wide the container is so it feels more natural.
-            end: () => "+=" + document.querySelector(".factsContainer_sm").offsetWidth
+            end: () => `+=${factsContainer_sm.offsetWidth}`
         }
     });
 }
@@ -113,9 +118,9 @@ const scroll_facts_tl_func = () => {
 
 
 //Initialization Methods
-
-face_tl_func();
-scroll_p_tl_func();
-scroll_skills_tl_func();
-scroll_facts_tl_func();
+init()
+face_tl_func()
+scroll_p_tl_func()
+scroll_skills_tl_func()
+scroll_facts_tl_func()
 
