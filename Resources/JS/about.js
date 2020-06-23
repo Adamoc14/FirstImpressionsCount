@@ -3,6 +3,11 @@ let factsContainer_sm = document.querySelector(".factsContainer_sm")
 
 const aboutInit =() => {
     factsContainer_sm = document.querySelector(".factsContainer_sm")
+    let head = document.getElementsByTagName('head')[0],
+    link = document.createElement('link')
+    link.rel = 'stylesheet'
+    link.href= "../../Resources/CSS/about.css"
+    head.appendChild(link);
 }
 
 const face_tl_func = () => {
@@ -118,9 +123,9 @@ const scroll_facts_tl_func = () => {
 
 
 // //Initialization Methods
-// aboutInit()
-// face_tl_func()
-// scroll_p_tl_func()
-// scroll_skills_tl_func()
-// scroll_facts_tl_func()
+aboutInit()
+face_tl_func()
+scroll_p_tl_func()
+scroll_skills_tl_func()
+scroll_facts_tl_func()
 
