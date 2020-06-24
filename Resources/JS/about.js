@@ -121,11 +121,10 @@ const scroll_facts_tl_func = () => {
 }
 
 
-
 // //Initialization Methods
-aboutInit()
-face_tl_func()
-scroll_p_tl_func()
-scroll_skills_tl_func()
-scroll_facts_tl_func()
+// aboutInit()
+// face_tl_func()
+// scroll_p_tl_func()
+// scroll_skills_tl_func()
+// scroll_facts_tl_func()
 
