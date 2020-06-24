@@ -1,0 +1,22 @@
+.loading_container{
+	position: fixed;
+	display:flex;
+	justify-content: center;
+	align-items: center;
+    width: 100%;
+    z-index: 10;
+    pointer-events: none;
+	top: 0;
+	left: 0;
+	overflow:hidden;
+	width: 0vw;
+	height: 100vh;
+	background: #f0c368;
+}
+
+.wrapper {
+	min-height: 100vh;
+    background: #f0c368;
+    /* overflow-x: hidden; */
+}
+
