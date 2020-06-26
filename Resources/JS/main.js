@@ -183,7 +183,7 @@ const scroll_facts_tl_func = () => {
     let scroll_tl = gsap.timeline({
         scrollTrigger: {
             trigger: '.factsContainer',
-            start: "top top",
+            start: "top center",
             // pin: true,
             scrub: true,
             end: "+=300",
@@ -202,8 +202,8 @@ const scroll_facts_tl_func = () => {
             trigger: ".factsContainer_sm",
             start: "center center",
             pin: true,
-            // pinSpacing:false,
-            // markers: true,
+            pinSpacing:false,
+            markers: true,
             scrub: 1,
             snap: 1 / (facts.length - 1),
             // // base vertical scrolling on how wide the container is so it feels more natural.
