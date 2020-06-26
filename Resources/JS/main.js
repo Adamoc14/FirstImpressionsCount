@@ -253,6 +253,7 @@ const delay = (ms) => {
 // Initialization Methods
 $(document).ready(() => {
     window.matchMedia("(max-width: 600px)").matches ? logo.attr('viewBox', '-350 -700 1274 1680') : logo.attr('viewBox', '-680 -380 2074 1080')
+    window.matchMedia("(max-width: 600px)").matches ? face.attr('viewBox', '-100 0 1408 2735') : face.attr('viewBox', '-1500 50 4208 2735')
     let viewbox = window.matchMedia("(max-width: 600px)")
     changeViewBox(viewbox)
     aboutInit()
