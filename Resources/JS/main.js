@@ -19,7 +19,8 @@ const homeInit = () => {
     viewBox = "",
         heading_Pos = [0, 0],
         displayState = ""
-    hamburger_display_button = Array.from($('.mobile_nav_sticky'))[0]
+    if(Array.from($('.mobile_nav_sticky'))[0])
+        hamburger_display_button = Array.from($('.mobile_nav_sticky'))[0]
     opened_nav_buttons = document.querySelector('.options')
     logo = $(".Actual_Logo_Svg");
     // Morphing Circles and ellipses to paths to be able to morph them and checking the viewbox for device size
@@ -89,13 +90,9 @@ const fadeInHeadingAndLinks = () => {
 }
 
 // About Page Functions 
-const aboutInit =() => {
+const aboutInit = () => {
     factsContainer_sm = document.querySelector(".factsContainer_sm")
-    let head = document.getElementsByTagName('head')[0],
-    link = document.createElement('link')
-    link.rel = 'stylesheet'
-    link.href= "../../Resources/CSS/about.css"
-    head.appendChild(link);
+    // console.log(factsContainer_sm)
 }
 
 const face_tl_func = () => {
@@ -126,7 +123,7 @@ const scroll_p_tl_func = () => {
             trigger: '.content',
             start: "top center",
             end: "+=1000",
-            markers: true,
+            // markers: true,
             scrub: true
             // pin: true
         }
@@ -156,7 +153,7 @@ const scroll_skills_tl_func = () => {
         scrollTrigger: {
             trigger: '.skillsContainer',
             start: "top center",
-            markers: true,
+            // markers: true,
 
         }
     }),
@@ -177,7 +174,8 @@ const scroll_skills_tl_func = () => {
 
 }
 
-const scroll_facts_tl_func = () => {
+const scroll_facts_tl_func = (smallFactsContainer) => {
+    if (smallFactsContainer === null) return
     let scroll_tl = gsap.timeline({
         scrollTrigger: {
             trigger: '.factsContainer',
@@ -185,10 +183,10 @@ const scroll_facts_tl_func = () => {
             // pin: true,
             scrub: true,
             end: "+=300",
-            markers: true,
+            // markers: true,
         }
     }),
-        facts = [...document.querySelectorAll('.fact')]
+    facts = [...document.querySelectorAll('.fact')]
     scroll_tl.to('.factsContainer h2', {
         scale: 1.5,
         duration: 1,
@@ -200,12 +198,13 @@ const scroll_facts_tl_func = () => {
             trigger: ".factsContainer_sm",
             start: "center center",
             pin: true,
-            // pinSpacing:false,
-            markers: true,
-            scrub: 1,
+            pinSpacing:false,
+            // markers: true,
+            scrub: true,
             snap: 1 / (facts.length - 1),
             // base vertical scrolling on how wide the container is so it feels more natural.
-            end: () => `+=${factsContainer_sm.offsetWidth}`
+            end: () => `+=${smallFactsContainer.offsetWidth}`
+            // end: () => `+=330`
         }
     });
 }
@@ -247,7 +246,7 @@ const delay = (ms) => {
 // Initialization Methods
 $(document).ready(() => {
     window.matchMedia("(max-width: 600px)").matches ? logo.attr('viewBox', '-350 -700 1274 1680') : logo.attr('viewBox', '-680 -380 2074 1080')
-    var viewbox = window.matchMedia("(max-width: 600px)")
+    let viewbox = window.matchMedia("(max-width: 600px)")
     changeViewBox(viewbox)
     aboutInit()
     face_tl_func()
@@ -256,16 +255,15 @@ $(document).ready(() => {
     scroll_facts_tl_func()
 })
 
-hamburger_display_button.onclick = () => {
-    opened_nav_buttons.classList.toggle('open')
-}
+if(hamburger_display_button)
+    hamburger_display_button.onclick = () => {
+        opened_nav_buttons.classList.toggle('open')
+    }
 
 barba.init({
     sync: true,
     transitions: [{
         name: 'transition-base',
-        preventRunning: true,
-        timeout: 5000,
         async leave() {
             const done = this.async();
             pageTransition();
@@ -294,10 +292,12 @@ barba.init({
             namespace: 'about',
             afterEnter() {
                 aboutInit()
+                let smallfactsContainer = document.querySelector(".factsContainer_sm")
+                console.log(smallfactsContainer)
                 face_tl_func()
                 scroll_p_tl_func()
                 scroll_skills_tl_func()
-                scroll_facts_tl_func()
+                scroll_facts_tl_func(smallfactsContainer)
             },
         }
     ],

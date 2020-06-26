@@ -4,18 +4,244 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <meta http-equiv="X-UA-Compatible" content="ie=edge">
-    <link rel="stylesheet" href="../../Resources/CSS/basics.css">
-    <link rel="stylesheet" href="../../Resources/CSS/homepage.css">
-    <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.2.6/gsap.min.js"></script>
+    <link rel="stylesheet" href="Resources/CSS/basics.css">
+    <link rel="stylesheet" href="Resources/CSS/homepage.css">
+    <link rel="stylesheet" href="Resources/CSS/about.css">
+    <link rel="stylesheet" href="Resources/CSS/projects.css">
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.3.4/gsap.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.3.4/ScrollTrigger.min.js"></script>
+    <script src="Resources/JS/DrawSVGPlugin.min.js"></script>
+    <script src="Resources/JS/CSSRulePlugin.min.js"></script>
     <script src="Resources/JS/MorphSVGPlugin.min.js"></script>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
     <script defer src="https://unpkg.com/@barba/core"></script>
-    <!-- <script defer src="Resources/JS/homepage.js"></script> -->
-    <title>Document</title>
+    <script defer src="Resources/JS/main.js"></script>
 </head>
 <body data-barba="wrapper">
-    <div class="wrapper" data-barba="container" data-barba-namespace="about">
-        
+    <div class="wrapper yellow" data-barba="container" data-barba-namespace="about">
+        <header>
+            <a href="index.html">Home</a>
+            <h2>PROJECTS</h2>
+            <a href="">Contact</a>
+        </header>
+        <div class="perksContainer">
+            <div class="perks_Container_sm">
+                <img src="Resources/Images/Laptop_Coding.png" alt="">
+            </div>
+            <div class="perks_Container_sm">
+                <img src="Resources/Images/Overall_iPhone.svg" alt="">
+            </div>
+            <div class="perks_Container_sm">
+                <ul>
+                    <li><img src="Resources/Images/Tick.svg" alt=""><a href="">Responsive</a></li>
+                    <li><img src="Resources/Images/Tick.svg" alt=""><a href="">Clean</a></li>
+                    <li><img src="Resources/Images/Tick.svg" alt=""><a href="">Aesthetic</a></li>
+                    <h3>..yeah I can do all that</h3>
+                </ul>
+            </div>
+        </div>
+        <div class="projectsContainer">
+            <div class="projectsContainer_sm">
+                <img src="Resources/Images/ArtByANC_Eye_Logo.svg" alt="">
+                <div class="hover_projects_Container">
+                    <div class="top_part">
+                        <h3>ArtByANC</h3>
+                        <a href="">View Project</a>
+                    </div>
+                    <div class="middle_part">
+                        <ul>
+                            <li>Complete Website</li>
+                            <li>SVG Logo Design and Animation</li>
+                        </ul>
+                    </div>
+                    <div class="bottom_part">
+                        <h5>https://artbyanc.herokuapp.com</h5>
+                    </div>
+                </div>
+            </div>
+            <div class="projectsContainer_sm">
+                <img src="Resources/Images/TourDeMeath_Logo.svg" alt="">
+                <div class="hover_projects_Container">
+                    <div class="top_part">
+                        <h3>Tour De Meath</h3>
+                        <a href="">View Project</a>
+                    </div>
+                    <div class="middle_part">
+                        <ul>
+                            <li>Complete Website</li>
+                            <li>Race Sign Up Functionality</li>
+                            <li>Logo Design</li>
+                        </ul>
+                    </div>
+                    <div class="bottom_part">
+                        <h5>http://www.tourdemeath.com/</h5>
+                    </div>
+                </div>
+            </div>
+            <div class="projectsContainer_sm">
+                <img src="Resources/Images/QRcode.svg" alt="">
+                <div class="hover_projects_Container">
+                    <div class="top_part">
+                        <h3>TutorAR</h3>
+                        <a href="">View Project</a>
+                    </div>
+                    <div class="middle_part">
+                        <h4>UCC(University) Sponsored AR app</h4>
+                        <ul>
+                            <li>App Design and Development</li>
+                        </ul>
+                    </div>
+                    <div class="bottom_part">
+                        <h5>Download Zappar on your device and scan the QR code above</h5>
+                    </div>
+                </div>
+            </div>
+            <div class="projectsContainer_sm">
+                <img src="Resources/Images/Gymbud_Logo.svg" alt="">
+                <div class="hover_projects_Container">
+                    <div class="top_part">
+                        <h3>Gymbud</h3>
+                        <a href="" class="coming_soon">Coming Soon</a>
+                    </div>
+                    <div class="middle_part">
+                        <ul>
+                            <li>Web & Native App Design and Development</li>
+                            <li>Logo Design</li>
+                        </ul>
+                    </div>
+                    <div class="bottom_part">
+                        <h5></h5>
+                    </div>
+                </div>
+            </div>
+            <div class="projectsContainer_sm">
+                <img src="Resources/Images/Swoop_Actual_Logo.svg" alt="">
+                <div class="hover_projects_Container">
+                    <div class="top_part">
+                        <h3>Swoop</h3>
+                        <a href="" class="coming_soon">Coming Soon</a>
+                    </div>
+                    <div class="middle_part">
+                        <ul>
+                            <li>Web & Native App Design and Development</li>
+                            <li>Logo Design</li>
+                        </ul>
+                    </div>
+                    <div class="bottom_part">
+                        <h5></h5>
+                    </div>
+                </div>
+            </div>
+            <div class="projectsContainer_sm">
+                <img src="Resources/Images/Pizza_Icon.svg" alt="">
+                <div class="hover_projects_Container">
+                    <div class="top_part">
+                        <h3>Pizza Button Program</h3>
+                        <a href="">View Project</a>
+                    </div>
+                    <div class="middle_part">
+                        <h4>Developed a script to order me pizza at the click of a button from Apache</h4>
+                    </div>
+                    <div class="bottom_part">
+                        <h5></h5>
+                    </div>
+                </div>
+            </div>
+            <div class="projectsContainer_sm">
+                <img src="Resources/Images/Corona_Icon.svg" alt="">
+                <div class="hover_projects_Container">
+                    <div class="top_part">
+                        <h3>Covid 19 Tracker</h3>
+                        <a href="">View Project</a>
+                    </div>
+                    <div class="middle_part">
+                        <ul>
+                            <li>Web App Design and Development</li>
+                            <li>API Data Usage</li>
+                        </ul>
+                    </div>
+                    <div class="bottom_part">
+                        <h5>https://cdpn.io/Adamoc/debug/PoPBgpR</h5>
+                    </div>
+                </div>
+            </div>
+            <div class="projectsContainer_sm">
+                <img src="Resources/Images/Hangman_Icon.svg" alt="">
+                <div class="hover_projects_Container">
+                    <div class="top_part">
+                        <h3>Classic Hangman</h3>
+                        <a href="">View Project</a>
+                    </div>
+                    <div class="middle_part">
+                        <ul>
+                            <li>Web App Design and Development</li>
+                            <li>HTML Canvas Usage</li>
+                        </ul>
+                    </div>
+                    <div class="bottom_part">
+                        <h5>https://cdpn.io/Adamoc/debug/pojQLQw</h5>
+                    </div>
+                </div>
+            </div>
+            <div class="projectsContainer_sm">
+                <img src="Resources/Images/Colour_Palette_Icon.svg" alt="">
+                <div class="hover_projects_Container">
+                    <div class="top_part">
+                        <h3>Colour Saver</h3>
+                        <a href="">View Project</a>
+                    </div>
+                    <div class="middle_part">
+                        <ul>
+                            <li>Web App Design and Development</li>
+                            <li>Firebase Storage Usage</li>
+                        </ul>
+                    </div>
+                    <div class="bottom_part">
+                        <h5>https://cdpn.io/Adamoc/debug/zYvEGmd</h5>
+                    </div>
+                </div>
+            </div>
+            <div class="projectsContainer_sm">
+                <img src="Resources/Images/Alarm_Clock_Icon.svg" alt="">
+                <div class="hover_projects_Container">
+                    <div class="top_part">
+                        <h3>Alarm Clock</h3>
+                        <a href="">View Project</a>
+                    </div>
+                    <div class="middle_part">
+                        <ul>
+                            <li>Web App Design and Development</li>
+                            <li>JS Dates Object Usage</li>
+                        </ul>
+                    </div>
+                    <div class="bottom_part">
+                        <h5>https://cdpn.io/Adamoc/debug/gOaeKwM</h5>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div id="socials_section_main_container">
+            <h1>SOCIALS</h1>
+            <div class="socials_section_container_sm">
+                <img src="Resources/Images/Instagram_Logo.png" alt="This is an image of the Instagram logo">
+                <a href="https://www.instagram.com/adamoceallaigh/?hl=en">@adamoceallaigh</a>
+            </div>
+            <div class="socials_section_container_sm">
+                <img src="Resources/Images/Github_Logo.png" alt="This is an image of the Github logo">
+                <a href="https://github.com/Adamoc14">@Adamoc14</a>
+            </div>
+            <div class="socials_section_container_sm">
+                <img src="Resources/Images/Codepen_Logo.png" alt="This is an image of the Codepen logo">
+                <a href="https://codepen.io/Adamoc">@Adamoc</a>
+            </div>
+            <div class="socials_section_container_sm">
+                <img src="Resources/Images/Linked_In_Logo.png" alt="This is an image of the LinkedIn logo">
+                <a href="https://www.linkedin.com/in/adamoceallaigh1234/">@adamoceallaigh1234</a>
+            </div>
+        </div>
     </div>
+    <footer>
+        AdamOC &copy; All Rights Reserved 2020
+    </footer>
 </body>
 </html>

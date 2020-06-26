@@ -10,6 +10,11 @@
 	font-size: 2vw;
 }
 
+.wrapper {
+	min-height: 100vh;
+	background: #1d373f;
+}
+
 li {
 	list-style: none;
 	text-align: center;
