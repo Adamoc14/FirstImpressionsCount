@@ -162,6 +162,7 @@
         height: 14vh;
         flex: unset;
         margin-top: 2vh;
+        text-align: unset;
     }
     .main_project_details_container_sm:last-child {
         justify-content: center;
