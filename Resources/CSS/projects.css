@@ -172,7 +172,7 @@ header a:last-child {
 }
 
 .bottom_part h5 {
-    font-size: 1.5vw;
+    font-size: 1.3vw;
 }
 
 #socials_section_main_container {
@@ -218,4 +218,38 @@ footer {
 	justify-content: center;
 	align-items: center;
 	padding: 3em;
+}
+
+@media (max-width: 600px){
+    .perksContainer {
+        display: none;
+    }
+    .projectsContainer_sm , 
+    .hover_projects_Container {
+        width: 80vw;
+    }
+    .projectsContainer_sm img {
+        width: 40vw;
+    }
+    .hover_projects_Container {
+        height: 15vh;
+        top: 85vh;
+    }
+    .top_part a {
+        font-size: 2vw;
+        padding: 1em .7em;
+        font-weight: bolder;
+    }
+    .middle_part {
+        margin-left: 2em;
+        padding-top: .3em;
+    }
+    .bottom_part {
+        padding: 1em !important;
+        display: flex;
+        justify-content: flex-end;
+    }
+    .bottom_part h5{
+        font-size: 2.2vw;
+    }
 }
