@@ -184,10 +184,10 @@ const scroll_facts_tl_func = () => {
         scrollTrigger: {
             trigger: '.factsContainer',
             start: "top top",
-            pin: true,
-            pinSpacing:false,
-            end: "bottom bottom",
-            markers: true,
+            // pin: true,
+            scrub: true,
+            end: "+=300",
+            // markers: true,
         }
     }),
     facts = [...document.querySelectorAll('.fact')]
@@ -201,12 +201,13 @@ const scroll_facts_tl_func = () => {
         scrollTrigger: {
             trigger: ".factsContainer_sm",
             start: "center center",
-            // pin: true,
-            markers: true,
-            scrub: true,
+            pin: true,
+            // pinSpacing:false,
+            // markers: true,
+            scrub: 1,
             snap: 1 / (facts.length - 1),
             // // base vertical scrolling on how wide the container is so it feels more natural.
-            // end: `+=${factsContainer_sm.offsetWidth}`
+            end: `+=${factsContainer_sm.offsetWidth}`
         }
     });
 }
