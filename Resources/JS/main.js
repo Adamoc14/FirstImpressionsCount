@@ -129,10 +129,8 @@ const scroll_p_tl_func = () => {
         scrollTrigger: {
             trigger: '.content',
             start: "top center",
-            end: "+=1000",
-            // markers: true,
+            end: "+=900",
             scrub: true
-            // pin: true
         }
     })
     scroll_tl.to('.first', {
@@ -185,11 +183,10 @@ const scroll_facts_tl_func = () => {
     let scroll_tl = gsap.timeline({
         scrollTrigger: {
             trigger: '.factsContainer',
-            start: "top center",
-            // pin: true,
-            // pinSpacing:false,
-            scrub: true,
-            end: "+=300",
+            start: "top top",
+            pin: true,
+            pinSpacing:false,
+            end: "bottom bottom",
             markers: true,
         }
     }),
@@ -199,7 +196,7 @@ const scroll_facts_tl_func = () => {
         duration: 1,
         ease: "slow"
     })
-    scroll_tl.to(facts, {
+    gsap.to(facts, {
         xPercent: -85 * (facts.length - 1),
         scrollTrigger: {
             trigger: ".factsContainer_sm",
@@ -208,8 +205,8 @@ const scroll_facts_tl_func = () => {
             markers: true,
             scrub: true,
             snap: 1 / (facts.length - 1),
-            // base vertical scrolling on how wide the container is so it feels more natural.
-            end: `+=${factsContainer_sm.offsetWidth}`
+            // // base vertical scrolling on how wide the container is so it feels more natural.
+            // end: `+=${factsContainer_sm.offsetWidth}`
         }
     });
 }
