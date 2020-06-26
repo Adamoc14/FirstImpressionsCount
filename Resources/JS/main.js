@@ -129,7 +129,7 @@ const scroll_p_tl_func = () => {
         scrollTrigger: {
             trigger: '.content',
             start: "top center",
-            end: "+=700",
+            end: "+=600",
             scrub: true
         }
     })
