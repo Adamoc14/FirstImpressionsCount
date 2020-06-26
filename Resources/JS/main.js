@@ -61,7 +61,7 @@ const changeViewBox = media_query => {
     media_query.matches ? viewBox = "-150 -180 2495 890" : viewBox = "-150 -350 3574 880"
     media_query.matches ? heading_Pos = [-511, -15] : heading_Pos = [-1540, 40]
     media_query.matches ? displayState = "none" : displayState = "block"
-    media_query.matches ? face_viewBox = "-100 0 1408 2735" : face_viewBox = "-1500 50 4208 2735"
+    media_query.matches ? face_viewBox = "-100 0 1408 1935" : face_viewBox = "-1500 50 4208 2135"
 }
 
 const moveLogo = () => {
@@ -255,7 +255,7 @@ const delay = (ms) => {
 // Initialization Methods
 $(document).ready(() => {
     window.matchMedia("(max-width: 600px)").matches ? logo.attr('viewBox', '-350 -700 1274 1680') : logo.attr('viewBox', '-680 -380 2074 1080')
-    window.matchMedia("(max-width: 600px)").matches ? face.attr('viewBox', '-100 0 1408 2735') : face.attr('viewBox', '-1500 50 4208 2735')
+    window.matchMedia("(max-width: 600px)").matches ? face.attr('viewBox', '-100 0 1408 1935') : face.attr('viewBox', '-1500 50 4208 2135')
     let viewbox = window.matchMedia("(max-width: 600px)")
     changeViewBox(viewbox)
     // aboutInit()
@@ -303,12 +303,11 @@ barba.init({
             beforeEnter(data) {
                 face = $(data.next.container.children[1]);
                 console.log(face)
-                window.matchMedia("(max-width: 600px)").matches ? face.attr('viewBox', '-100 0 1408 2735') : face.attr('viewBox', '-1500 50 4208 2735')
+                window.matchMedia("(max-width: 600px)").matches ? face.attr('viewBox', '-100 0 1408 1935') : face.attr('viewBox', '-1500 50 4208 2135')
                 // aboutInit()
             },
             afterEnter() {
                 // aboutInit()
-                window.matchMedia("(max-width: 600px)").matches ? face.attr('viewBox', '-100 0 1408 2735') : face.attr('viewBox', '-1500 50 4208 2735')
                 let smallfactsContainer = document.querySelector(".factsContainer_sm")
                 console.log(smallfactsContainer)
                 face_tl_func()

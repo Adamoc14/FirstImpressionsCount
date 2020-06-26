@@ -16,7 +16,7 @@
 }
 
 .content {
-	padding: 4em 2em;
+	padding: 2em 2em;
 	height: 130vh;
 }
 
@@ -152,9 +152,16 @@ footer {
 }
 
 @media (max-width: 600px) {
+	.content{
+		padding: 0em 2em;
+	}
+	.content h2{
+		font-size: 6vw;
+	}
     .factsContainer {
         line-height: 5vh;
-    }
+	}
+	
     #socials_section_main_container {
 		height: 100vh;
 		justify-content: center;
