@@ -154,10 +154,13 @@ footer {
 @media (max-width: 600px) {
 	.content{
 		padding: 0em 2em;
-		height: 70vh;
+		height: 80vh;
 	}
 	.content h2{
 		font-size: 6vw;
+	}
+	.skillsContainer{
+		height: 80vh;
 	}
     .factsContainer {
         line-height: 5vh;
