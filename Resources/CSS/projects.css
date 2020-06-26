@@ -245,7 +245,7 @@ footer {
         padding-top: .3em;
     }
     .bottom_part {
-        padding: 1em !important;
+        /* padding: 1em !important; */
         display: flex;
         justify-content: flex-end;
     }
