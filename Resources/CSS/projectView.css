@@ -51,6 +51,12 @@
     border-radius: 5px;
 }
 
+.view_website_btn:hover{
+    background: #f0c368;
+    color: #1d373f;
+    font-weight:600;
+}
+
 /* End of Website Button */
 
 .main_project_details_container_sm h4 {
@@ -162,6 +168,9 @@
         margin: 0;
         width: 100vw;
         height: 8vh;
+    }
+    .view_website_btn{
+        border: 1px solid #f0c368;
     }
     .main_project_brief_section {
         flex-direction: column;
