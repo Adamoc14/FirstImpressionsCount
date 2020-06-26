@@ -2,19 +2,21 @@
 
 // Homepage Variables 
 let viewBox = ""
-face_viewBox = ""
 heading_Pos = [0, 0]
 displayState = ""
 hamburger_display_button = Array.from($('.mobile_nav_sticky'))[0]
 opened_nav_buttons = document.querySelector('.options')
 logo = $(".Actual_Logo_Svg")
-face = $('.my_face')
+
 // Morphing Circles and ellipses to paths to be able to morph them and checking the viewbox for device size
 MorphSVGPlugin.convertToPath("ellipse");
 shapes = Array.from($('.Logo_In_Shapes path'))
 
 // About Page Variables 
-let factsContainer_sm = document.querySelector(".factsContainer_sm")
+let face_viewBox = "" ,
+face = $('.my_face')
+factsContainer_sm = ""
+
 
 // Homepage Functions
 const homeInit = () => {
@@ -82,7 +84,6 @@ const fadeInHeadingAndLinks = () => {
         display: "block",
         x: heading_Pos[0],
         y: heading_Pos[1],
-        // scale:1,
         duration: 3
     })
     gsap.to('.mobile_nav_sticky', {
@@ -95,13 +96,10 @@ const fadeInHeadingAndLinks = () => {
 // About Page Functions 
 const aboutInit = () => {
     factsContainer_sm = document.querySelector(".factsContainer_sm")
-    console.log(face.attr('viewBox'))
-    
     gsap.to(face , {
         attr: { viewBox: face_viewBox },
         duration: 3
     })
-    // console.log(factsContainer_sm)
 }
 
 const face_tl_func = () => {
@@ -183,16 +181,16 @@ const scroll_skills_tl_func = () => {
 
 }
 
-const scroll_facts_tl_func = (smallFactsContainer) => {
-    if (smallFactsContainer === null) return
+const scroll_facts_tl_func = () => {
     let scroll_tl = gsap.timeline({
         scrollTrigger: {
             trigger: '.factsContainer',
             start: "top center",
             // pin: true,
+            // pinSpacing:false,
             scrub: true,
             end: "+=300",
-            // markers: true,
+            markers: true,
         }
     }),
     facts = [...document.querySelectorAll('.fact')]
@@ -207,13 +205,11 @@ const scroll_facts_tl_func = (smallFactsContainer) => {
             trigger: ".factsContainer_sm",
             start: "center center",
             pin: true,
-            pinSpacing:false,
-            // markers: true,
+            markers: true,
             scrub: true,
             snap: 1 / (facts.length - 1),
             // base vertical scrolling on how wide the container is so it feels more natural.
-            end: () => `+=${smallFactsContainer.offsetWidth}`
-            // end: () => `+=330`
+            end: `+=${factsContainer_sm.offsetWidth}`
         }
     });
 }
@@ -302,18 +298,17 @@ barba.init({
             namespace: 'about',
             beforeEnter(data) {
                 face = $(data.next.container.children[1]);
-                console.log(face)
+                // console.log(face)
                 window.matchMedia("(max-width: 600px)").matches ? face.attr('viewBox', '-100 0 1408 1935') : face.attr('viewBox', '-1500 50 4208 2135')
+                factsContainer_sm = data.next.container.children[4]
                 // aboutInit()
             },
             afterEnter() {
                 // aboutInit()
-                let smallfactsContainer = document.querySelector(".factsContainer_sm")
-                console.log(smallfactsContainer)
                 face_tl_func()
                 scroll_p_tl_func()
                 scroll_skills_tl_func()
-                scroll_facts_tl_func(smallfactsContainer)
+                scroll_facts_tl_func()
             },
         }
     ],
