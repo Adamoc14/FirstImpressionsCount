@@ -2,11 +2,13 @@
 
 // Homepage Variables 
 let viewBox = ""
+face_viewBox = ""
 heading_Pos = [0, 0]
 displayState = ""
 hamburger_display_button = Array.from($('.mobile_nav_sticky'))[0]
 opened_nav_buttons = document.querySelector('.options')
 logo = $(".Actual_Logo_Svg")
+face = $('.my_face')
 // Morphing Circles and ellipses to paths to be able to morph them and checking the viewbox for device size
 MorphSVGPlugin.convertToPath("ellipse");
 shapes = Array.from($('.Logo_In_Shapes path'))
@@ -57,8 +59,9 @@ const logo_tl_func = () => {
 
 const changeViewBox = media_query => {
     media_query.matches ? viewBox = "-150 -180 2495 890" : viewBox = "-150 -350 3574 880"
-    media_query.matches ? heading_Pos = [-511, -15] : heading_Pos = [-1540, 40];
+    media_query.matches ? heading_Pos = [-511, -15] : heading_Pos = [-1540, 40]
     media_query.matches ? displayState = "none" : displayState = "block"
+    media_query.matches ? face_viewBox = "-100 0 1408 2735" : face_viewBox = "-1500 50 4208 2735"
 }
 
 const moveLogo = () => {
@@ -92,6 +95,10 @@ const fadeInHeadingAndLinks = () => {
 // About Page Functions 
 const aboutInit = () => {
     factsContainer_sm = document.querySelector(".factsContainer_sm")
+    gsap.to(face , {
+        attr: { viewBox: face_viewBox },
+        duration: 3
+    })
     // console.log(factsContainer_sm)
 }
 
@@ -290,6 +297,9 @@ barba.init({
         },
         {
             namespace: 'about',
+            beforeEnter() {
+                aboutInit()
+            },
             afterEnter() {
                 aboutInit()
                 let smallfactsContainer = document.querySelector(".factsContainer_sm")
