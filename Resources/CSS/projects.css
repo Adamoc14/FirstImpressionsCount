@@ -222,6 +222,9 @@ footer {
 }
 
 @media (max-width: 600px){
+    header a{
+        border: 1px solid #1D373F;
+    }
     .perksContainer {
         display: none;
     }
