@@ -207,7 +207,7 @@ const scroll_facts_tl_func = () => {
             scrub: 1,
             snap: 1 / (facts.length - 1),
             // // base vertical scrolling on how wide the container is so it feels more natural.
-            end: `+=${factsContainer_sm.offsetWidth}`
+            // end: `+=${factsContainer_sm.offsetWidth}`
         }
     });
 }
