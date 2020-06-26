@@ -162,6 +162,9 @@ footer {
 	.skillsContainer{
 		height: 80vh;
 	}
+	.bar{
+		height: 3vh;
+	}
     .factsContainer {
         line-height: 5vh;
 	}
