@@ -95,6 +95,8 @@ const fadeInHeadingAndLinks = () => {
 // About Page Functions 
 const aboutInit = () => {
     factsContainer_sm = document.querySelector(".factsContainer_sm")
+    console.log(face.attr('viewBox'))
+    
     gsap.to(face , {
         attr: { viewBox: face_viewBox },
         duration: 3
@@ -256,7 +258,7 @@ $(document).ready(() => {
     window.matchMedia("(max-width: 600px)").matches ? face.attr('viewBox', '-100 0 1408 2735') : face.attr('viewBox', '-1500 50 4208 2735')
     let viewbox = window.matchMedia("(max-width: 600px)")
     changeViewBox(viewbox)
-    aboutInit()
+    // aboutInit()
     face_tl_func()
     scroll_p_tl_func()
     scroll_skills_tl_func()
@@ -298,11 +300,15 @@ barba.init({
         },
         {
             namespace: 'about',
-            beforeEnter() {
-                aboutInit()
+            beforeEnter(data) {
+                face = $(data.next.container.children[1]);
+                console.log(face)
+                window.matchMedia("(max-width: 600px)").matches ? face.attr('viewBox', '-100 0 1408 2735') : face.attr('viewBox', '-1500 50 4208 2735')
+                // aboutInit()
             },
             afterEnter() {
-                aboutInit()
+                // aboutInit()
+                window.matchMedia("(max-width: 600px)").matches ? face.attr('viewBox', '-100 0 1408 2735') : face.attr('viewBox', '-1500 50 4208 2735')
                 let smallfactsContainer = document.querySelector(".factsContainer_sm")
                 console.log(smallfactsContainer)
                 face_tl_func()
