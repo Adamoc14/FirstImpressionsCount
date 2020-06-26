@@ -256,4 +256,12 @@ footer {
     .bottom_part h5{
         font-size: 2.2vw;
     }
+    #socials_section_main_container {
+		height: 100vh;
+		justify-content: center;
+	}
+
+	.socials_section_container_sm img {
+		height: 10vh;
+	}
 }
