@@ -201,6 +201,7 @@ const scroll_facts_tl_func = () => {
         scrollTrigger: {
             trigger: ".factsContainer_sm",
             start: "center center",
+            end: "bottom bottom",
             pin: true,
             pinSpacing:false,
             markers: true,
