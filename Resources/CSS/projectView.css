@@ -157,12 +157,15 @@
         flex-wrap:wrap;
     }
     .main_project_details_container_sm {
-        width: 33.3vw;
+        width: 38.5vw;
         margin-top: 4vh;
         height: 14vh;
         flex: unset;
         margin-top: 2vh;
         text-align: unset;
+    }
+    .main_project_details_container_sm:first-child {
+        width: 23vw;
     }
     .main_project_details_container_sm:last-child {
         justify-content: center;
