@@ -290,6 +290,11 @@ barba.init({
                     opened_nav_buttons.classList.toggle('open')
                 }
             },
+            beforeLeave(data){
+                factsContainer = data.next.container.children[4]
+                factsContainer_sm = data.next.container.children[4].children[1]
+                facts = [...data.next.container.children[4].children[1].children]
+            }
         },
         {
             namespace: 'about',
