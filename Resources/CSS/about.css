@@ -74,14 +74,15 @@
 .factsContainer {
     padding: 0em 2em;
     text-align: center;
-    line-height: 10vh;
+	line-height: 10vh;
+	height: 300vh;
 }
 
 .factsContainer h2 {
     font-size: 1.8em;
     transform: scale(0);
     padding: 2em 0em;
-    margin-bottom: 15vh;
+    /* margin-bottom: 5vh; */
     color: #F0C368;
 }
 

@@ -184,31 +184,26 @@ const scroll_facts_tl_func = () => {
         scrollTrigger: {
             trigger: '.factsContainer',
             start: "top center",
-            // pin: true,
             scrub: true,
-            end: "+=300",
-            // markers: true,
         }
     }),
     facts = [...document.querySelectorAll('.fact')]
     scroll_tl.to('.factsContainer h2', {
         scale: 1.5,
-        duration: 1,
-        ease: "slow"
+        duration: .01,
+        ease: CustomEase.create("custom", "M0,0 C0,0 0.177,0.874 0.177,0.874 0.368,0.874 1,0.96 1,0.976 ")
     })
+    facts = [...document.querySelectorAll('.fact')]
     gsap.to(facts, {
         xPercent: -85 * (facts.length - 1),
         scrollTrigger: {
             trigger: ".factsContainer_sm",
             start: "center center",
-            end: `+=${factsContainer_sm.offsetWidth}`,
             pin: true,
-            pinSpacing:false,
-            markers: true,
             scrub: 1,
             snap: 1 / (facts.length - 1),
-            // // base vertical scrolling on how wide the container is so it feels more natural.
-            // end: `+=${factsContainer_sm.offsetWidth}`
+            // base vertical scrolling on how wide the container is so it feels more natural.
+            end: `+=${factsContainer_sm.offsetWidth}`,
         }
     });
 }
