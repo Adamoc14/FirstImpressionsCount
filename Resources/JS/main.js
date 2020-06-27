@@ -182,6 +182,7 @@ const scroll_skills_tl_func = () => {
 }
 
 const scroll_facts_tl_func = () => {
+    console.log(factsContainer)
     let scroll_tl = gsap.timeline({
         scrollTrigger: {
             trigger: `.${factsContainer.className}`,
