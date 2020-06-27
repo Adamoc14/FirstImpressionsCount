@@ -15,7 +15,9 @@ shapes = Array.from($('.Logo_In_Shapes path'))
 // About Page Variables 
 let face_viewBox = "" ,
 face = $('.my_face'),
-factsContainer , factsContainer_sm , facts = ""
+factsContainer  = $('.factsContainer')
+factsContainer_sm  = $('.factsContainer_sm')
+facts = [...document.querySelectorAll('.fact')]
 
 gsap.registerPlugin(ScrollTrigger);
 
