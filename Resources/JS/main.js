@@ -299,6 +299,7 @@ barba.init({
                 factsContainer = data.next.container.children[4]
                 factsContainer_sm = data.next.container.children[4].children[1]
                 facts = [...data.next.container.children[4].children[1].children]
+                scroll_facts_tl_func()
                 // console.log(facts)
                 // aboutInit()
             },
