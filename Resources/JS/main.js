@@ -250,11 +250,13 @@ $(document).ready(() => {
     window.matchMedia("(max-width: 600px)").matches ? logo.attr('viewBox', '-350 -700 1274 1680') : logo.attr('viewBox', '-680 -380 2074 1080')
     window.matchMedia("(max-width: 600px)").matches ? face.attr('viewBox', '-100 0 1408 1935') : face.attr('viewBox', '-1500 50 4208 2135')
     let viewbox = window.matchMedia("(max-width: 600px)")
+    factsContainer = $('.factContainer')[0]
     changeViewBox(viewbox)
     // aboutInit()
     face_tl_func()
     scroll_p_tl_func()
     scroll_skills_tl_func()
+    console.log(factsContainer)
     scroll_facts_tl_func()
 })
 
