@@ -204,10 +204,6 @@
     .main_project_device_pics_container_sm:last-child img{
         height: 45vh;
     }
-    #socials_section_main_container{
-        margin-top: unset;
-    }
-
 }
 
 
