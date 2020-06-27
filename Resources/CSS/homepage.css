@@ -261,6 +261,10 @@
 	.projects_section_sm_container:nth-child(2) {
 		order: -1;
 	}
+	.projects_section_sm_container h3, 
+	.about_section_sm_container h3 {
+		width: 80vw;
+	}
 	.projects_section_sm_container img {
 		width: 57vw;
 		height: 20vh;
