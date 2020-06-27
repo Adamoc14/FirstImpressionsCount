@@ -14,8 +14,10 @@ shapes = Array.from($('.Logo_In_Shapes path'))
 
 // About Page Variables 
 let face_viewBox = "" ,
-face = $('.my_face')
-factsContainer_sm = ""
+face = $('.my_face'),
+factsContainer , factsContainer_sm , facts = ""
+
+gsap.registerPlugin(ScrollTrigger);
 
 
 // Homepage Functions
@@ -182,24 +184,24 @@ const scroll_skills_tl_func = () => {
 const scroll_facts_tl_func = () => {
     let scroll_tl = gsap.timeline({
         scrollTrigger: {
-            trigger: '.factsContainer',
+            trigger: `.${factsContainer.className}`,
             start: "top top",
             scrub: true,
         }
-    }),
-    facts = [...document.querySelectorAll('.fact')]
+    })
     scroll_tl.to('.factsContainer h2', {
         scale: 1.5,
         duration: .01,
         ease: CustomEase.create("custom", "M0,0 C0,0 0.177,0.874 0.177,0.874 0.368,0.874 1,0.96 1,0.976 ")
     })
-    facts = [...document.querySelectorAll('.fact')]
-    gsap.to(facts, {
+    // console.log(factsContainer_sm.className)
+    scroll_tl.to(facts, {
         xPercent: -85 * (facts.length - 1),
         scrollTrigger: {
-            trigger: ".factsContainer_sm",
+            trigger: `.${factsContainer_sm.className}`,
             start: "center center",
             pin: true,
+            markers: true,
             scrub: 1,
             snap: 1 / (facts.length - 1),
             // base vertical scrolling on how wide the container is so it feels more natural.
@@ -292,9 +294,11 @@ barba.init({
             namespace: 'about',
             beforeEnter(data) {
                 face = $(data.next.container.children[1]);
-                // console.log(face)
                 window.matchMedia("(max-width: 600px)").matches ? face.attr('viewBox', '-100 0 1408 1935') : face.attr('viewBox', '-1500 50 4208 2135')
-                factsContainer_sm = data.next.container.children[4]
+                factsContainer = data.next.container.children[4]
+                factsContainer_sm = data.next.container.children[4].children[1]
+                facts = [...data.next.container.children[4].children[1].children]
+                // console.log(facts)
                 // aboutInit()
             },
             afterEnter() {
