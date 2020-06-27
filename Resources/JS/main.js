@@ -295,6 +295,7 @@ barba.init({
             namespace: 'about',
             beforeEnter(data) {
                 face = $(data.next.container.children[1]);
+                console.log(data.current.container)
                 window.matchMedia("(max-width: 600px)").matches ? face.attr('viewBox', '-100 0 1408 1935') : face.attr('viewBox', '-1500 50 4208 2135')
                 factsContainer = data.next.container.children[4]
                 factsContainer_sm = data.next.container.children[4].children[1]
