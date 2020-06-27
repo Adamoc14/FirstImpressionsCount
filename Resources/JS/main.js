@@ -183,7 +183,7 @@ const scroll_facts_tl_func = () => {
     let scroll_tl = gsap.timeline({
         scrollTrigger: {
             trigger: '.factsContainer',
-            start: "top center",
+            start: "top top",
             scrub: true,
         }
     }),

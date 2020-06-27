@@ -75,7 +75,7 @@
     padding: 0em 2em;
     text-align: center;
 	line-height: 10vh;
-	height: 200vh;
+	height: 300vh;
 }
 
 .factsContainer h2 {
@@ -163,11 +163,15 @@ footer {
 	.skillsContainer{
 		height: 80vh;
 	}
+	.skillContainer{
+		width: 65vw;
+	}
 	.bar{
 		height: 3vh;
 	}
     .factsContainer {
-        line-height: 5vh;
+		line-height: 5vh;
+		height: 100vh;
 	}
 	
     #socials_section_main_container {
