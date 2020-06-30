@@ -129,10 +129,10 @@
 	.bar{
 		height: 2vh;
 	}
-    .factsContainer {
+    /* .factsContainer {
 		line-height: 5vh;
 		height: 130vh;
-	}
+	} */
 	.fact {
 		width: 50vw;
 	}
