@@ -1,12 +1,12 @@
 //Variable Declarations and Function Definitions 
 
 // Homepage Variables 
-let viewBox = ""
-heading_Pos = [0, 0]
+let heading_Pos = [0, 0], 
 displayState = ""
 hamburger_display_button = Array.from($('.mobile_nav_sticky'))[0]
 opened_nav_buttons = document.querySelector('.options')
 logo = $(".Actual_Logo_Svg")
+viewBox = ""
 
 // Morphing Circles and ellipses to paths to be able to morph them and checking the viewbox for device size
 MorphSVGPlugin.convertToPath("ellipse");
@@ -14,16 +14,17 @@ shapes = Array.from($('.Logo_In_Shapes path'))
 
 // About Page Variables 
 
+//__________________________________________________________________________________________________
 
 // Homepage Functions
 const homeInit = () => {
-    viewBox = "",
-    heading_Pos = [0, 0],
+    let logo = $(".Actual_Logo_Svg")
+    heading_Pos = [0, 0]
     displayState = ""
+    opened_nav_buttons = document.querySelector('.options')
+    window.matchMedia("(max-width: 600px)").matches ? logo.attr('viewBox', '-350 -700 1274 1680') : logo.attr('viewBox', '-680 -380 2074 1080')
     if(Array.from($('.mobile_nav_sticky'))[0])
         hamburger_display_button = Array.from($('.mobile_nav_sticky'))[0]
-    opened_nav_buttons = document.querySelector('.options')
-    logo = $(".Actual_Logo_Svg");
     // Morphing Circles and ellipses to paths to be able to morph them and checking the viewbox for device size
     MorphSVGPlugin.convertToPath("ellipse");
     shapes = Array.from($('.Logo_In_Shapes path'))
@@ -60,7 +61,6 @@ const changeViewBox = media_query => {
     media_query.matches ? viewBox = "-150 -180 2495 890" : viewBox = "-150 -350 3574 880"
     media_query.matches ? heading_Pos = [-511, -15] : heading_Pos = [-1540, 40]
     media_query.matches ? displayState = "none" : displayState = "block"
-    // media_query.matches ? face_viewBox = "-100 0 1408 1935" : face_viewBox = "-1500 50 4208 2135"
 }
 
 const moveLogo = () => {
@@ -250,23 +250,15 @@ const delay = (ms) => {
 // aboutInit()
 
 // Initialization Methods
-$(document).ready(() => {
-    // window.matchMedia("(max-width: 600px)").matches ? logo.attr('viewBox', '-350 -700 1274 1680') : logo.attr('viewBox', '-680 -380 2074 1080')
-    // window.matchMedia("(max-width: 600px)").matches ? face.attr('viewBox', '-100 0 1408 1935') : face.attr('viewBox', '-1500 50 4208 2135')
-    // let viewbox = window.matchMedia("(max-width: 600px)")
-    // changeViewBox(viewbox)
-    // // aboutInit()
-    // aboutInit()
-    // face_tl_func()
-    // scroll_p_tl_func()
-    // scroll_skills_tl_func()
-})
+// $(document).ready(() => {
+//     // let viewbox = window.matchMedia("(max-width: 600px)")
+//     // changeViewBox(viewbox)
+// })
 
-
-// if(hamburger_display_button)
-//     hamburger_display_button.onclick = () => {
-//         opened_nav_buttons.classList.toggle('open')
-//     }
+if(hamburger_display_button)
+    hamburger_display_button.onclick = () => {
+        opened_nav_buttons.classList.toggle('open')
+    }
 
 barba.init({
     sync: true,
@@ -286,14 +278,13 @@ barba.init({
         {
             namespace: 'home',
             afterEnter() {
-                // homeInit()
-                // window.matchMedia("(max-width: 600px)").matches ? logo.attr('viewBox', '-350 -700 1274 1680') : logo.attr('viewBox', '-680 -380 2074 1080')
-                // let viewbox = window.matchMedia("(max-width: 600px)")
-                // changeViewBox(viewbox)
-                // logo_tl_func();
-                // hamburger_display_button.onclick = () => {
-                //     opened_nav_buttons.classList.toggle('open')
-                // }
+                homeInit()
+                let viewbox = window.matchMedia("(max-width: 600px)")
+                changeViewBox(viewbox)
+                logo_tl_func()
+                hamburger_display_button.onclick = () => {
+                    opened_nav_buttons.classList.toggle('open')
+                }
             },
         },
         {
