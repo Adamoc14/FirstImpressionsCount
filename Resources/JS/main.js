@@ -13,13 +13,6 @@ MorphSVGPlugin.convertToPath("ellipse");
 shapes = Array.from($('.Logo_In_Shapes path'))
 
 // About Page Variables 
-let face_viewBox = "" ,
-face = $('.my_face'),
-factsContainer  = document.querySelector('.factsContainer'),
-factsContainer_sm  = $('.factsContainer_sm'),
-facts = [...document.querySelectorAll('.fact')],
-myAnim
-
 
 
 // Homepage Functions
@@ -67,7 +60,7 @@ const changeViewBox = media_query => {
     media_query.matches ? viewBox = "-150 -180 2495 890" : viewBox = "-150 -350 3574 880"
     media_query.matches ? heading_Pos = [-511, -15] : heading_Pos = [-1540, 40]
     media_query.matches ? displayState = "none" : displayState = "block"
-    media_query.matches ? face_viewBox = "-100 0 1408 1935" : face_viewBox = "-1500 50 4208 2135"
+    // media_query.matches ? face_viewBox = "-100 0 1408 1935" : face_viewBox = "-1500 50 4208 2135"
 }
 
 const moveLogo = () => {
@@ -100,26 +93,27 @@ const fadeInHeadingAndLinks = () => {
 // About Page Functions 
 const aboutInit = () => {
     console.log('We have lift off ')
-    const allClasses = [...document.querySelectorAll('[class]')]
-    let gsapArray = []
-    console.log(allClasses.length)
-    // allClasses.map(classes => console.log(classes.className.split(' ')))
-    for (var i = 0; i < allClasses.length; i++) {
-        if (/gsap-/.test(allClasses[i].className)) {
-            gsapArray.push(allClasses[i].className);
-        }
-    }
-    gsapArray.map(tag => document.querySelector(`.${tag}`).remove())
-    myAnim = undefined
-    if(typeof myAnim === "undefined") {
-        // setTimeout(scroll_facts_tl_func , 10)
+    let horizontalscrollAnim,
+    face = $('.my_face')
+    cleanGSAP()
+    if(typeof horizontalscrollAnim === "undefined") {
         scroll_facts_tl_func();
     }
     window.dispatchEvent(new Event('resize'));
-    gsap.to(face , {
-        attr: { viewBox: face_viewBox },
-        duration: 3
-    })
+    window.matchMedia("(max-width: 600px)").matches ? face.attr('viewBox', '-100 0 1408 1935') : face.attr('viewBox', '-1500 50 4208 2135')
+}
+
+const cleanGSAP = () => {
+    const allClasses = [...document.querySelectorAll('[class]')]
+    let gsapArray = []
+    if(allClasses.length <= 134) return
+    for (var i = 0; i < allClasses.length; i++) {
+        if (/gsap-/.test(allClasses[i].className)) {
+            gsapArray.push(allClasses[i].className);
+        } else 
+            break
+    }
+    gsapArray.map(tag => document.querySelector(`.${tag}`).remove())
 }
 
 const face_tl_func = () => {
@@ -127,7 +121,7 @@ const face_tl_func = () => {
         paths = document.querySelectorAll('.My_Face path'),
         filledYellowElements = ['.Main_Hair_Part', '.Eyeball_2', '.Eyeball_1', '.Nostril_1', '.Nostril_2', '.Tongue_Part'],
         filledNavyElements = ['.Pupil_2', '.Pupil_1'];
-    face_tl.set(filledNavyElements, { fill: 'unset' }),
+        face_tl.set(filledNavyElements, { fill: 'unset' }),
         face_tl.set(filledYellowElements, { fill: 'unset' }),
         face_tl.fromTo(paths, { drawSVG: "0%" }, { duration: 1, drawSVG: "100% ", stagger: 0.15 })
     let firstAnimation = gsap.to(filledYellowElements, {
@@ -144,7 +138,7 @@ const face_tl_func = () => {
 }
 
 
-const scroll_p_tl_func = () => {
+const scroll_para_tl_func = () => {
     let scroll_tl = gsap.timeline({
         scrollTrigger: {
             trigger: '.content',
@@ -198,17 +192,15 @@ const scroll_skills_tl_func = () => {
 }
 
 const scroll_facts_tl_func = () => {
-    const facts = [...document.querySelectorAll('.fact')];
+    const facts = [...document.querySelectorAll('.fact')],
     factsContainer = document.querySelector('.factsContainer');
-    console.log(facts, factsContainer)
-    myAnim = gsap.to(facts, {
-        xPercent: -85 * (facts.length - 1),
+    horizontalscrollAnim = gsap.to(facts, {
+        xPercent: -115 * (facts.length - 1),
         ease: "none",
         scrollTrigger: {
             trigger: ".factsContainer",
             pin: true,
             markers: true,
-            // pinSpacing: false,
             scrub: 1,
             snap: 1 / (facts.length - 1),
             start: "top top",
@@ -303,32 +295,16 @@ barba.init({
         },
         {
             namespace: 'about',
-            beforeEnter(data) {
-                //face = $(data.next.container.children[1]);
-                //window.matchMedia("(max-width: 600px)").matches ? face.attr('viewBox', '-100 0 1408 1935') : face.attr('viewBox', '-1500 50 4208 2135')
-                // scroll_facts_tl_func()
-            },
             afterEnter() {
                 aboutInit()
-                // aboutInit()
-                // face_tl_func()
-                // scroll_p_tl_func()
-                // scroll_skills_tl_func()
-                // scroll_facts_tl_func()
+                face_tl_func()
+                scroll_para_tl_func()
+                scroll_skills_tl_func()
             }
         }
     ],
 });
 
-// //Global Hooks 
-// barba.hooks.leave(() => {
-//     const done = this.async();
-//     pageTransition();
-//     await delay(1000);
-//     done();
-// })
-// barba.hooks.enter(() => {
-//     window.scrollTo(0, 0);
-// })
+
 
 
