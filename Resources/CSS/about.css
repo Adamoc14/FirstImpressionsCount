@@ -72,19 +72,16 @@
 }
 
 .factsContainer {
-	/* padding: 0em 2em; */
 	width: 300vw;
-    text-align: center;
-	/* line-height: 10vh; */
 	height: 100vh
 }
 
 .factsContainer h2 {
     font-size: 1.8em;
-    transform: scale(0);
     padding: 2em 0em;
-    /* margin-bottom: 5vh; */
-	color: #F0C368;
+    margin-bottom: 5vh;
+    margin-left: 30vw;
+    color: #F0C368;
 }
 
 .factsContainer_sm {
@@ -115,16 +112,20 @@
 @media (max-width: 600px) {
 	.content{
 		padding: 0em 2em;
-		height: 80vh;
+		height: 70vh;
 	}
 	.content h2{
 		font-size: 6vw;
 	}
-	.skillsContainer{
-		height: 80vh;
+	.skillsContainer {
+		height: 43vh;
 	}
-	.skillContainer{
-		width: 65vw;
+	.skillContainer {
+		width: 75vw;
+	}
+	.skillContainer h2 {
+		width: 14vw;
+		font-size: 3.5vw;
 	}
 	.bar{
 		height: 2vh;
@@ -134,6 +135,13 @@
 	}
 	.fact {
 		width: 50vw;
+	}
+	.fact h3 {
+		font-size: 3.5vw;
+	}
+	.percentage {
+		font-size: 4vw;
+		margin-left: 1em;
 	}
 	
     #socials_section_main_container {
