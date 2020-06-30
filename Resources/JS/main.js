@@ -194,8 +194,10 @@ const scroll_skills_tl_func = () => {
 const scroll_facts_tl_func = () => {
     const facts = [...document.querySelectorAll('.fact')],
     factsContainer = document.querySelector('.factsContainer');
+    let xPercent;
+    window.matchMedia("(max-width: 600px)").matches ? xPercent = -85 : xPercent = -115
     horizontalscrollAnim = gsap.to(facts, {
-        xPercent: -115 * (facts.length - 1),
+        xPercent: xPercent * (facts.length - 1),
         ease: "none",
         scrollTrigger: {
             trigger: ".factsContainer",
