@@ -18,8 +18,8 @@ shapes = Array.from($('.Logo_In_Shapes path'))
 // Homepage Functions
 const homeInit = () => {
     viewBox = "",
-        heading_Pos = [0, 0],
-        displayState = ""
+    heading_Pos = [0, 0],
+    displayState = ""
     if(Array.from($('.mobile_nav_sticky'))[0])
         hamburger_display_button = Array.from($('.mobile_nav_sticky'))[0]
     opened_nav_buttons = document.querySelector('.options')
@@ -203,7 +203,7 @@ const scroll_facts_tl_func = () => {
             trigger: ".factsContainer",
             pin: true,
             pinSpacing: true,
-            markers: true,
+            // markers: true,
             scrub: 1,
             snap: 1 / (facts.length - 1),
             start: "top top",
