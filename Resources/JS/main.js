@@ -202,7 +202,7 @@ const scroll_facts_tl_func = () => {
     factsContainer = document.querySelector('.factsContainer');
     console.log(facts, factsContainer)
     myAnim = gsap.to(facts, {
-        xPercent: -115 * (facts.length - 1),
+        xPercent: -85 * (facts.length - 1),
         ease: "none",
         scrollTrigger: {
             trigger: ".factsContainer",
