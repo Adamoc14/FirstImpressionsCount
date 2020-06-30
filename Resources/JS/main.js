@@ -18,9 +18,10 @@ shapes = Array.from($('.Logo_In_Shapes path'))
 
 // Homepage Functions
 const homeInit = () => {
-    let logo = $(".Actual_Logo_Svg")
+    logo = $(".Actual_Logo_Svg")
     heading_Pos = [0, 0]
     displayState = ""
+    viewBox = ""
     opened_nav_buttons = document.querySelector('.options')
     window.matchMedia("(max-width: 600px)").matches ? logo.attr('viewBox', '-350 -700 1274 1680') : logo.attr('viewBox', '-680 -380 2074 1080')
     if(Array.from($('.mobile_nav_sticky'))[0])
@@ -64,6 +65,7 @@ const changeViewBox = media_query => {
 }
 
 const moveLogo = () => {
+    console.log(logo, viewBox)
     gsap.to(logo, {
         attr: { viewBox: viewBox },
         duration: 3
