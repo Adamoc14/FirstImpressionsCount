@@ -15,11 +15,11 @@ shapes = Array.from($('.Logo_In_Shapes path'))
 // About Page Variables 
 let face_viewBox = "" ,
 face = $('.my_face'),
-factsContainer  = $('.factsContainer')
-factsContainer_sm  = $('.factsContainer_sm')
-facts = [...document.querySelectorAll('.fact')]
+factsContainer  = document.querySelector('.factsContainer'),
+factsContainer_sm  = $('.factsContainer_sm'),
+facts = [...document.querySelectorAll('.fact')],
+myAnim
 
-gsap.registerPlugin(ScrollTrigger);
 
 
 // Homepage Functions
@@ -99,7 +99,17 @@ const fadeInHeadingAndLinks = () => {
 
 // About Page Functions 
 const aboutInit = () => {
-    factsContainer_sm = document.querySelector(".factsContainer_sm")
+    console.log('We have lift off ')
+    const allClasses = [...document.querySelectorAll('[class]')]
+    console.log(allClasses.length)
+    // allClasses.map(classes => console.log(classes.className.split(' ')))
+    // .some(c => /gsap-.*/.test(c))
+    // console.log(allClasses , allClasses.length)
+    myAnim = undefined
+    if(typeof myAnim === "undefined") {
+        // setTimeout(scroll_facts_tl_func , 10)
+        scroll_facts_tl_func();
+    }
     gsap.to(face , {
         attr: { viewBox: face_viewBox },
         duration: 3
@@ -162,8 +172,6 @@ const scroll_skills_tl_func = () => {
         scrollTrigger: {
             trigger: '.skillsContainer',
             start: "top center",
-            // markers: true,
-
         }
     }),
         barWidth = "",
@@ -173,42 +181,32 @@ const scroll_skills_tl_func = () => {
         let barAnimation = gsap.to(bar, {
             width: barWidth,
             duration: 1,
-            delay : .2
+            delay : .2,
         }),
-            percentageAniamtion = gsap.to('.percentage', {
-                scale: 1,
-            })
+        percentageAniamtion = gsap.to('.percentage', {
+            scale: 1,
+        })
         scroll_tl.add([barAnimation, percentageAniamtion]);
     })
 
 }
 
 const scroll_facts_tl_func = () => {
-    console.log(factsContainer)
-    let scroll_tl = gsap.timeline({
+    const facts = [...document.querySelectorAll('.fact')];
+    factsContainer = document.querySelector('.factsContainer');
+    console.log(facts, factsContainer)
+    myAnim = gsap.to(facts, {
+        xPercent: -115 * (facts.length - 1),
+        ease: "none",
         scrollTrigger: {
-            trigger: `.${factsContainer.className}`,
-            start: "top top",
-            scrub: true,
-        }
-    })
-    scroll_tl.to('.factsContainer h2', {
-        scale: 1.5,
-        duration: .01,
-        ease: CustomEase.create("custom", "M0,0 C0,0 0.177,0.874 0.177,0.874 0.368,0.874 1,0.96 1,0.976 ")
-    })
-    // console.log(factsContainer_sm.className)
-    scroll_tl.to(facts, {
-        xPercent: -85 * (facts.length - 1),
-        scrollTrigger: {
-            trigger: `.${factsContainer_sm.className}`,
-            start: "center center",
+            trigger: ".factsContainer",
             pin: true,
             markers: true,
+            // pinSpacing: false,
             scrub: 1,
             snap: 1 / (facts.length - 1),
             // base vertical scrolling on how wide the container is so it feels more natural.
-            end: `+=${factsContainer_sm.offsetWidth}`,
+            end:  `+=4320`
         }
     });
 }
@@ -225,21 +223,21 @@ const pageTransition = () => {
         left: "0%",
         ease: "circ.out",
     })
-        .to('.loading_container img', {
-            scale: 0.6,
-            duration: 1
-        }, "-=1.2")
+    .to('.loading_container img', {
+        scale: 0.6,
+        duration: 1
+    }, "-=1.2")
 
-        .to('.loading_container', {
-            duration: 1.2,
-            width: "0%",
-            right: "0%",
-            ease: "circ.out",
-        })
-        .to('.loading_container img', {
-            scale: 0.3,
-            duration: 1.2
-        }, "-=1.3")
+    .to('.loading_container', {
+        duration: 1.2,
+        width: "0%",
+        right: "0%",
+        ease: "circ.out",
+    })
+    .to('.loading_container img', {
+        scale: 0.3,
+        duration: 1.2
+    }, "-=1.3")
 }
 
 // Helper Functions
@@ -247,24 +245,26 @@ const delay = (ms) => {
     return new Promise(resolve => setTimeout(resolve, ms));
 }
 
+// aboutInit()
+
 // Initialization Methods
 $(document).ready(() => {
-    window.matchMedia("(max-width: 600px)").matches ? logo.attr('viewBox', '-350 -700 1274 1680') : logo.attr('viewBox', '-680 -380 2074 1080')
-    window.matchMedia("(max-width: 600px)").matches ? face.attr('viewBox', '-100 0 1408 1935') : face.attr('viewBox', '-1500 50 4208 2135')
-    let viewbox = window.matchMedia("(max-width: 600px)")
-    changeViewBox(viewbox)
+    // window.matchMedia("(max-width: 600px)").matches ? logo.attr('viewBox', '-350 -700 1274 1680') : logo.attr('viewBox', '-680 -380 2074 1080')
+    // window.matchMedia("(max-width: 600px)").matches ? face.attr('viewBox', '-100 0 1408 1935') : face.attr('viewBox', '-1500 50 4208 2135')
+    // let viewbox = window.matchMedia("(max-width: 600px)")
+    // changeViewBox(viewbox)
+    // // aboutInit()
     // aboutInit()
-    face_tl_func()
-    scroll_p_tl_func()
-    scroll_skills_tl_func()
-    console.log(factsContainer)
-    scroll_facts_tl_func()
+    // face_tl_func()
+    // scroll_p_tl_func()
+    // scroll_skills_tl_func()
 })
 
-if(hamburger_display_button)
-    hamburger_display_button.onclick = () => {
-        opened_nav_buttons.classList.toggle('open')
-    }
+
+// if(hamburger_display_button)
+//     hamburger_display_button.onclick = () => {
+//         opened_nav_buttons.classList.toggle('open')
+//     }
 
 barba.init({
     sync: true,
@@ -284,41 +284,41 @@ barba.init({
         {
             namespace: 'home',
             afterEnter() {
-                homeInit()
-                window.matchMedia("(max-width: 600px)").matches ? logo.attr('viewBox', '-350 -700 1274 1680') : logo.attr('viewBox', '-680 -380 2074 1080')
-                let viewbox = window.matchMedia("(max-width: 600px)")
-                changeViewBox(viewbox)
-                logo_tl_func();
-                hamburger_display_button.onclick = () => {
-                    opened_nav_buttons.classList.toggle('open')
-                }
+                // homeInit()
+                // window.matchMedia("(max-width: 600px)").matches ? logo.attr('viewBox', '-350 -700 1274 1680') : logo.attr('viewBox', '-680 -380 2074 1080')
+                // let viewbox = window.matchMedia("(max-width: 600px)")
+                // changeViewBox(viewbox)
+                // logo_tl_func();
+                // hamburger_display_button.onclick = () => {
+                //     opened_nav_buttons.classList.toggle('open')
+                // }
             },
-            beforeLeave(data){
-                factsContainer = data.next.container.children[4]
-                factsContainer_sm = data.next.container.children[4].children[1]
-                facts = [...data.next.container.children[4].children[1].children]
-            }
         },
         {
             namespace: 'about',
             beforeEnter(data) {
-                face = $(data.next.container.children[1]);
-                console.log(data.current.container)
-                window.matchMedia("(max-width: 600px)").matches ? face.attr('viewBox', '-100 0 1408 1935') : face.attr('viewBox', '-1500 50 4208 2135')
-                factsContainer = data.next.container.children[4]
-                factsContainer_sm = data.next.container.children[4].children[1]
-                facts = [...data.next.container.children[4].children[1].children]
-                scroll_facts_tl_func()
-                // console.log(facts)
-                // aboutInit()
+                //face = $(data.next.container.children[1]);
+                //window.matchMedia("(max-width: 600px)").matches ? face.attr('viewBox', '-100 0 1408 1935') : face.attr('viewBox', '-1500 50 4208 2135')
+                // scroll_facts_tl_func()
             },
             afterEnter() {
+                const allClasses = [...document.querySelectorAll('[class]')]
+                console.log(allClasses.length)
+                let gsapArray = []
+                // allClasses.map(classes => console.log(classes.className.split(' ')))
+                for (var i = 0; i < allClasses.length; i++) {
+                    if (/gsap-/.test(allClasses[i].className)) {
+                        gsapArray.push(allClasses[i].className);
+                    }
+                }
+                gsapArray.map(tag => document.querySelector(`.${tag}`).remove())
+                aboutInit()
                 // aboutInit()
-                face_tl_func()
-                scroll_p_tl_func()
-                scroll_skills_tl_func()
-                scroll_facts_tl_func()
-            },
+                // face_tl_func()
+                // scroll_p_tl_func()
+                // scroll_skills_tl_func()
+                // scroll_facts_tl_func()
+            }
         }
     ],
 });

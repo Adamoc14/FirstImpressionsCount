@@ -72,10 +72,11 @@
 }
 
 .factsContainer {
-    padding: 0em 2em;
+	/* padding: 0em 2em; */
+	width: 300vw;
     text-align: center;
-	line-height: 10vh;
-	height: 650vh;
+	/* line-height: 10vh; */
+	height: 100vh
 }
 
 .factsContainer h2 {
@@ -83,19 +84,21 @@
     transform: scale(0);
     padding: 2em 0em;
     /* margin-bottom: 5vh; */
-    color: #F0C368;
+	color: #F0C368;
 }
 
 .factsContainer_sm {
-    display: flex;
+	display: flex;
+	justify-content: space-around;
     width: 300vw;
 }
 
 .fact {
     display: flex;
     flex-direction: column;
-    height: 40vh;
-    flex: 1;
+	height: 40vh;
+	width: 30vw;
+    /* flex: 1; */
     justify-content: space-between;
     padding: 1em;
     align-items: center;
