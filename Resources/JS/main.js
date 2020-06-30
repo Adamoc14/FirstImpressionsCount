@@ -101,15 +101,21 @@ const fadeInHeadingAndLinks = () => {
 const aboutInit = () => {
     console.log('We have lift off ')
     const allClasses = [...document.querySelectorAll('[class]')]
+    let gsapArray = []
     console.log(allClasses.length)
     // allClasses.map(classes => console.log(classes.className.split(' ')))
-    // .some(c => /gsap-.*/.test(c))
-    // console.log(allClasses , allClasses.length)
+    for (var i = 0; i < allClasses.length; i++) {
+        if (/gsap-/.test(allClasses[i].className)) {
+            gsapArray.push(allClasses[i].className);
+        }
+    }
+    gsapArray.map(tag => document.querySelector(`.${tag}`).remove())
     myAnim = undefined
     if(typeof myAnim === "undefined") {
         // setTimeout(scroll_facts_tl_func , 10)
         scroll_facts_tl_func();
     }
+    window.dispatchEvent(new Event('resize'));
     gsap.to(face , {
         attr: { viewBox: face_viewBox },
         duration: 3
@@ -205,6 +211,7 @@ const scroll_facts_tl_func = () => {
             // pinSpacing: false,
             scrub: 1,
             snap: 1 / (facts.length - 1),
+            start: "top top",
             // base vertical scrolling on how wide the container is so it feels more natural.
             end:  `+=4320`
         }
@@ -302,16 +309,6 @@ barba.init({
                 // scroll_facts_tl_func()
             },
             afterEnter() {
-                const allClasses = [...document.querySelectorAll('[class]')]
-                console.log(allClasses.length)
-                let gsapArray = []
-                // allClasses.map(classes => console.log(classes.className.split(' ')))
-                for (var i = 0; i < allClasses.length; i++) {
-                    if (/gsap-/.test(allClasses[i].className)) {
-                        gsapArray.push(allClasses[i].className);
-                    }
-                }
-                gsapArray.map(tag => document.querySelector(`.${tag}`).remove())
                 aboutInit()
                 // aboutInit()
                 // face_tl_func()
