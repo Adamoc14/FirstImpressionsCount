@@ -194,7 +194,7 @@ const scroll_skills_tl_func = () => {
 const scroll_facts_tl_func = () => {
     const facts = [...document.querySelectorAll('.fact')],
     factsContainer = document.querySelector('.factsContainer');
-    let xPercent, pinSpacing;
+    let xPercent
     window.matchMedia("(max-width: 600px)").matches ? xPercent = -85 : xPercent = -115
     horizontalscrollAnim = gsap.to(facts, {
         xPercent: xPercent * (facts.length - 1),
