@@ -196,14 +196,14 @@ const scroll_facts_tl_func = () => {
     factsContainer = document.querySelector('.factsContainer');
     let xPercent, pinSpacing;
     window.matchMedia("(max-width: 600px)").matches ? xPercent = -85 : xPercent = -115
-    window.matchMedia("(max-width: 600px)").matches ? pinSpacing = false : pinSpacing = true
+    // window.matchMedia("(max-width: 600px)").matches ? pinSpacing = false : pinSpacing = true
     horizontalscrollAnim = gsap.to(facts, {
         xPercent: xPercent * (facts.length - 1),
         ease: "none",
         scrollTrigger: {
             trigger: ".factsContainer",
             pin: true,
-            pinSpacing: pinSpacing,
+            pinSpacing: true,
             markers: true,
             scrub: 1,
             snap: 1 / (facts.length - 1),
